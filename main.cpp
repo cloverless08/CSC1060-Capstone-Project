@@ -6,10 +6,12 @@
 using namespace std;
 
 int main() {
-    double var = 10;
+    /*
+     double var = 10;
     std::cout << var << std::endl;
     std::cin >> var;
     std::cout << var << std::endl;
+    */
 
     const std::string str1 = "Hello, World!";
     int num1;
