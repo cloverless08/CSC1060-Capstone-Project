@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
-project(CSC1060_Capstone_Project CXX)
+project(application CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 
