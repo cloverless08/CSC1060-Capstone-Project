@@ -1,35 +1,46 @@
-#include <iostream>
-#include <string>
-#include <cmath>
 #include <GLFW/glfw3.h>
-#include <cstdlib>
+#include <iostream>
+#include <cmath>
 
-int testFunction(int num) {
-    std::cout << "Your number is: " << num << std::endl;
+int strOut(std::string str) {
+    std::cout << str << std::endl;
     return 0;
 }
 
-int main() {
-    int var = 10;
-    var = static_cast<double>(var);
+int main()
+{
+    strOut("Starting Program...");
 
+    if (!glfwInit()) {
+        strOut("Failed to Initialize GLFW");
+        return -1;
+    }
 
-    std::cout << var << std::endl;
-    std::cin >> var;
-    std::cout << var << std::endl;
-    testFunction(var);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+    GLFWwindow* window = glfwCreateWindow(
+        640, 480,
+        "CSC1060 - Black Hole",
+        nullptr,
+        nullptr
+    );
 
-    const std::string str1 = "Hello, World!";
-    int num1;
-    int num2;
+    if (!window)
+    {
+        glfwTerminate();
+        strOut("Window Creation Failed");
+        return -1;
+    }
 
-    std::cout << "Enter two numbers to add." << std::endl;
-    std::cin >> num1;
-    std::cin >> num2;
+    while (!glfwWindowShouldClose(window))
+    {
+        glfwSwapBuffers(window);
+        glfwPollEvents();
+    }
 
-    std::cout << num1 + num2 << std::endl;
-    std::cout << sqrt(num1 + num2) << std::endl;
-    std::cout << str1 << std::endl;
+    glfwDestroyWindow(window);
+    glfwTerminate();
 
     return 0;
 }
