@@ -9,6 +9,10 @@ int strOut(std::string str) {
 
 int main()
 {
+    const char * WINDOW_TITLE = "CSC1060 Black Hole Simulation";
+    int width = 640;
+    int height = 480;
+
     strOut("Starting Program...");
 
     if (!glfwInit()) {
@@ -20,8 +24,8 @@ int main()
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
     GLFWwindow* window = glfwCreateWindow(
-        640, 480,
-        "CSC1060 - Black Hole",
+        width, height,
+        WINDOW_TITLE,
         nullptr,
         nullptr
     );
@@ -37,6 +41,8 @@ int main()
     {
         glfwSwapBuffers(window);
         glfwPollEvents();
+
+
     }
 
     glfwDestroyWindow(window);
