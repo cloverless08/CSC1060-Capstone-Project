@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <cmath>
+#include <GLFW/glfw3.h>
 #include <cstdlib>
 
 int testFunction(int num) {
@@ -9,7 +10,9 @@ int testFunction(int num) {
 }
 
 int main() {
-    double var = 10;
+    int var = 10;
+    var = static_cast<double>(var);
+
 
     std::cout << var << std::endl;
     std::cin >> var;
