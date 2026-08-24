@@ -9,7 +9,7 @@ int strOut(std::string str) {
 
 int main()
 {
-    const char * WINDOW_TITLE = "CSC1060 Black Hole Simulation";
+    const char* WINDOW_TITLE = "CSC1060 Black Hole Simulation";
     int width = 640;
     int height = 480;
 
@@ -25,6 +25,7 @@ int main()
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
+    // creates project window
     GLFWwindow* window = glfwCreateWindow(
         width, height,
         WINDOW_TITLE,
@@ -39,12 +40,12 @@ int main()
         return -1;
     }
 
+    // runs inside window
     while (!glfwWindowShouldClose(window))
     {
         glfwSwapBuffers(window);
         glfwPollEvents();
-
-
+        //strOut("window open");
     }
 
     glfwDestroyWindow(window);
