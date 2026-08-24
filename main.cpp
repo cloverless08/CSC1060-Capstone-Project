@@ -3,15 +3,14 @@
 #include <cmath>
 #include <cstdlib>
 
-using namespace std;
-
 int testFunction(int num) {
     std::cout << "Your number is: " << num << std::endl;
     return 0;
 }
 
 int main() {
-     double var = 10;
+    double var = 10;
+
     std::cout << var << std::endl;
     std::cin >> var;
     std::cout << var << std::endl;
