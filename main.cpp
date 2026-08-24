@@ -1,55 +1,23 @@
-#include <GLFW/glfw3.h>
+#include <SDL3/SDL.h>
+#include <vector>
 #include <iostream>
-#include <cmath>
 
 int strOut(std::string str) {
     std::cout << str << std::endl;
-    return 0;
 }
 
-int main()
-{
-    const char* WINDOW_TITLE = "CSC1060 Black Hole Simulation";
-    int width = 640;
-    int height = 480;
+int main() {
+    // constants
+    const int WIDTH = 640;
+    const int HEIGHT = 480;
+    strOut("Constants Initialized.");
 
-    strOut("Starting Program...");
+    // structs
+    struct Color {
+        uint8_t r, g, b, a;
+    };
+    strOut("Structs Initialized.");
 
-    if (!glfwInit()) {
-        strOut("Failed to Initialize GLFW");
-        return -1;
-    }
-
-    // establish glfw context
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-
-    // creates project window
-    GLFWwindow* window = glfwCreateWindow(
-        width, height,
-        WINDOW_TITLE,
-        nullptr,
-        nullptr
-    );
-
-    if (!window)
-    {
-        glfwTerminate();
-        strOut("Window Creation Failed");
-        return -1;
-    }
-
-    // runs inside window
-    while (!glfwWindowShouldClose(window))
-    {
-        glfwSwapBuffers(window);
-        glfwPollEvents();
-        //strOut("window open");
-    }
-
-    glfwDestroyWindow(window);
-    glfwTerminate();
-
-    return 0;
+    // variables
+    strOut("Variables Initialized.");
 }
