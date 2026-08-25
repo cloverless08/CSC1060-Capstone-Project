@@ -28,6 +28,7 @@ int main() {
 
     // variables
     int var = 10;
+    bool running = true;
     strOut("Variables Initialized.", msgType[2]);
 
     // create canvas (pixel buffer) in memory
@@ -42,19 +43,29 @@ int main() {
     SDL_Init(SDL_INIT_EVERYTHING);
     SDL_CreateWindowAndRenderer(WIDTH, HEIGHT, 0, &window, &renderer);
     //SDL_RenderSetScale(renderer, 1, 1);
+    SDL_Event event;
     strOut("SDL2 Initialized.", msgType[2]);
 
     // clears screen to black
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
     SDL_RenderClear(renderer);
 
-    // temp for testing
+    // window loop
+    while (running) {
+        // poll all events
+        while (SDL_PollEvent(&event)) {
+            if (event.type == SDL_QUIT) {
+                running = false;
+            }
+        }
 
-    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-    SDL_RenderDrawLine(renderer, 0, 0, WIDTH, HEIGHT);
-    SDL_RenderDrawLine(renderer, WIDTH, 0, 0, HEIGHT);
-    SDL_RenderPresent(renderer);
-    SDL_Delay(5000);
+        // temp
+        SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+        SDL_RenderDrawLine(renderer, 0, 0, WIDTH, HEIGHT);
+        SDL_RenderDrawLine(renderer, WIDTH, 0, 0, HEIGHT);
+        SDL_RenderPresent(renderer);
+        SDL_Delay(50);
+    }
 
     return 0;
 }
