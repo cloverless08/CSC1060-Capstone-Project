@@ -29,10 +29,23 @@ int main() {
     int var = 10;
     strOut("Variables Initialized.", msgType[2]);
 
-    // create cancas (pixel buffer) in memory
+    // create canvas (pixel buffer) in memory
     uint32_t pixelBuffer[WIDTH * HEIGHT];
     strOut("Pixel Buffer Initialized.", msgType[2]);
 
+    // structs required for sdl2
+    SDL_Window* window = nullptr;
+    SDL_Renderer* renderer = nullptr;
+    strOut("SDL2 Structs Initialized.", msgType[2]);
+
+    SDL_Init(SDL_INIT_EVERYTHING);
+    SDL_CreateWindowAndRenderer(WIDTH, HEIGHT, 0, &window, &renderer);
+    //SDL_RenderSetScale(renderer, 1, 1);
+    strOut("SDL2 Initialized.", msgType[2]);
+
+    // clears screen to black
+    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+    SDL_RenderClear(renderer);
 
     return 0;
 }
