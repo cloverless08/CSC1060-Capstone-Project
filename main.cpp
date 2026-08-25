@@ -2,8 +2,9 @@
 #include <vector>
 #include <iostream>
 #include <cctype>
+#include <array>
 
-int strOut(std::string str, std::string type = "standard") {
+int strOut(std::string str = "Nothing to output (edit strOut() to fix)", std::string type = "standard") {
     if (type != "standard") {
         for (char &c : type) {
             c = static_cast<char>(std::toupper(static_cast<unsigned char>(c)));
@@ -20,9 +21,12 @@ int main() {
     // constants
     const int WIDTH = 640;
     const int HEIGHT = 480;
-    strOut("Constants Initialized.");
+    std::array<std::string, 4> msgType = {"OUTPUT", "ERROR", "SETUP", "WARN"};
+    strOut("Constants Initialized.", msgType[2]);
 
     // variables
     int var = 10;
-    strOut("Variables Initialized.");
+    strOut("Variables Initialized.", msgType[2]);
+
+    return 0;
 }
