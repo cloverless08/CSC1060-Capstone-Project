@@ -3,6 +3,7 @@
 #include <iostream>
 #include <cctype>
 #include <array>
+#include <random>
 
 // function for clean console output with labels
 int strOut(const std::string msg = "Nothing to output (edit strOut() to fix)", std::string label = "standard") {
@@ -48,10 +49,12 @@ int main() {
     SDL_RenderClear(renderer);
 
     // temp for testing
-    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-    SDL_RenderDrawPoint(renderer, WIDTH/2, HEIGHT/2);
-    SDL_RenderPresent(renderer);
-    SDL_Delay(10000);
+    for (int i = 1; i <= 10; i++) {
+        SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+        SDL_RenderDrawPoint(renderer, WIDTH/i, HEIGHT/i);
+        SDL_RenderPresent(renderer);
+        SDL_Delay(500);
+    }
 
     return 0;
 }
