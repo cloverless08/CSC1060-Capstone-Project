@@ -1,6 +1,7 @@
 #include <SDL3/SDL.h>
 #include <vector>
 #include <iostream>
+#include <cctype>
 
 int strOut(std::string str, std::string type = "standard") {
     if (type != "standard") {
@@ -11,6 +12,8 @@ int strOut(std::string str, std::string type = "standard") {
     } else {
         std::cout << str << std::endl;
     }
+
+    return 0;
 }
 
 int main() {
@@ -20,5 +23,6 @@ int main() {
     strOut("Constants Initialized.");
 
     // variables
+    int var = 10;
     strOut("Variables Initialized.");
 }
