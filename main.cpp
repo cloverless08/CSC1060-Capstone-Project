@@ -4,14 +4,15 @@
 #include <cctype>
 #include <array>
 
+// function for clean console output with labels
 int strOut(std::string str = "Nothing to output (edit strOut() to fix)", std::string type = "standard") {
     if (type != "standard") {
         for (char &c : type) {
-            c = static_cast<char>(std::toupper(static_cast<unsigned char>(c)));
+            c = static_cast<char>(std::toupper(static_cast<unsigned char>(c))); // changes string 'type' to all upper
         }
-        std::cout << "[" + type + "] " << str << std::endl;
+        std::cout << "[" + type + "] " << str << std::endl; // output with label
     } else {
-        std::cout << str << std::endl;
+        std::cout << str << std::endl; // output without label
     }
 
     return 0;
@@ -21,7 +22,7 @@ int main() {
     // constants
     const int WIDTH = 640;
     const int HEIGHT = 480;
-    std::array<std::string, 4> msgType = {"OUTPUT", "ERROR", "SETUP", "WARN"};
+    std::array<std::string, 4> msgType = {"SYSTEM", "ERROR", "SETUP", "WARN"}; // strOut() helpful labels
     strOut("Constants Initialized.", msgType[2]);
 
     // variables
