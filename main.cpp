@@ -47,5 +47,11 @@ int main() {
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
     SDL_RenderClear(renderer);
 
+    // temp for testing
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderDrawPoint(renderer, WIDTH/2, HEIGHT/2);
+    SDL_RenderPresent(renderer);
+    SDL_Delay(10000);
+
     return 0;
 }
