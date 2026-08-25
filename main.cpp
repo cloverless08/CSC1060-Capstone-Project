@@ -12,12 +12,6 @@ int main() {
     const int HEIGHT = 480;
     strOut("Constants Initialized.");
 
-    // structs
-    struct Color {
-        uint8_t r, g, b, a;
-    };
-    strOut("Structs Initialized.");
-
     // variables
     strOut("Variables Initialized.");
 }
