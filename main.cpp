@@ -1,11 +1,11 @@
-#include <SDL3/SDL.h>
+#include <SDL2/SDL.h>
 #include <vector>
 #include <iostream>
 #include <cctype>
 #include <array>
 
 // function for clean console output with labels
-int strOut(std::string str = "Nothing to output (edit strOut() to fix)", std::string type = "standard") {
+int strOut(const std::string str = "Nothing to output (edit strOut() to fix)", std::string type = "standard") {
     if (type != "standard") {
         for (char &c : type) {
             c = static_cast<char>(std::toupper(static_cast<unsigned char>(c))); // changes string 'type' to all upper
@@ -28,6 +28,11 @@ int main() {
     // variables
     int var = 10;
     strOut("Variables Initialized.", msgType[2]);
+
+    // create cancas (pixel buffer) in memory
+    uint32_t pixelBuffer[WIDTH * HEIGHT];
+    strOut("Pixel Buffer Initialized.", msgType[2]);
+
 
     return 0;
 }
