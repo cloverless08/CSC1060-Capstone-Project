@@ -5,15 +5,30 @@
 #include <array>
 #include <random>
 
-// function for clean console output with labels
-int strOut(const std::string msg = "Nothing to output (edit strOut() to fix)", std::string label = "standard") {
+// ANSI Color Code Macros
+#define RESET   "\033[0m"
+#define RED     "\033[31m"
+#define GREEN   "\033[32m"
+#define YELLOW  "\033[33m"
+#define BLUE    "\033[34m"
+#define MAGENTA "\033[35m"
+#define CYAN    "\033[36m"
+
+// function for clean, dynamic console output with labels
+static int strOut(const std::string& msg = "Nothing to output (edit strOut() to fix)", std::string label = "standard") {
     if (label != "standard") {
         for (char &c : label) {
-            c = static_cast<char>(std::toupper(static_cast<unsigned char>(c))); // changes string 'type' to all upper
+            c = static_cast<char>(std::toupper(static_cast<unsigned char>(c))); // changes string 'label' to all upper
         }
-        std::cout << "[" + label + "] " << msg << std::endl; // output with label
+        if (label == "ERROR") {
+            std::cout << RED << "[" + label + "] " << msg << RESET << std::endl; // output with label
+        } else if (label == "WARN") {
+            std::cout << YELLOW << "[" + label + "] " << msg << RESET << std::endl; // output with label
+        } else if (label == "SETUP") {
+            std::cout << CYAN << "[" + label + "] " << msg << RESET << std::endl; // output with label
+        }
     } else {
-        std::cout << msg << std::endl; // output without label
+        std::cout << RESET << msg << RESET<< std::endl; // output without label
     }
 
     return 0;
@@ -21,13 +36,12 @@ int strOut(const std::string msg = "Nothing to output (edit strOut() to fix)", s
 
 int main() {
     // constants
-    const int WIDTH = 640;
-    const int HEIGHT = 480;
-    std::array<std::string, 4> msgType = {"SYSTEM", "ERROR", "SETUP", "WARN"}; // strOut() helpful labels
+    constexpr int WIDTH = 640;
+    constexpr int HEIGHT = 480;
+    const std::array<std::string, 4> msgType = {"SYSTEM", "ERROR", "SETUP", "WARN"}; // strOut() helpful labels
     strOut("Constants Initialized.", msgType[2]);
 
     // variables
-    int var = 10;
     bool running = true;
     strOut("Variables Initialized.", msgType[2]);
 
@@ -64,7 +78,7 @@ int main() {
         SDL_RenderDrawLine(renderer, 0, 0, WIDTH, HEIGHT);
         SDL_RenderDrawLine(renderer, WIDTH, 0, 0, HEIGHT);
         SDL_RenderPresent(renderer);
-        SDL_Delay(50);
+        SDL_Delay(25);
     }
 
     return 0;
