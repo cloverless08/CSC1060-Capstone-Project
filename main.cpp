@@ -2,8 +2,14 @@
 #include <vector>
 #include <iostream>
 
-int strOut(std::string str) {
-    std::cout << str << std::endl;
+int strOut(std::string str, std::string type = "output") {
+   if (type == "debug") {
+       std::cout << "[DEBUG] " << str << std::endl;
+   } else if (type == "error") {
+       std::cout << "[ERROR} " << str << std::endl;
+   } else {
+       std::cout << str << std::endl;
+   }
 }
 
 int main() {
@@ -14,4 +20,6 @@ int main() {
 
     // variables
     strOut("Variables Initialized.");
+
+    strOut()
 }
