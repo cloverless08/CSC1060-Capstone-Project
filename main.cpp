@@ -3,13 +3,12 @@
 #include <iostream>
 
 int strOut(std::string str, std::string type = "output") {
-   if (type == "debug") {
-       std::cout << "[DEBUG] " << str << std::endl;
-   } else if (type == "error") {
-       std::cout << "[ERROR} " << str << std::endl;
-   } else {
-       std::cout << str << std::endl;
-   }
+    if (type != "output") {
+        std::string declare = std::toupper(type);
+        std::cout << "[" + declare + "] " << str << std::endl;
+    } else {
+        std::cout << str << std::endl;
+    }
 }
 
 int main() {
