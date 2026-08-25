@@ -2,10 +2,12 @@
 #include <vector>
 #include <iostream>
 
-int strOut(std::string str, std::string type = "output") {
-    if (type != "output") {
-        std::string declare = std::toupper(type);
-        std::cout << "[" + declare + "] " << str << std::endl;
+int strOut(std::string str, std::string type = "standard") {
+    if (type != "standard") {
+        for (char &c : type) {
+            c = static_cast<char>(std::toupper(static_cast<unsigned char>(c)));
+        }
+        std::cout << "[" + type + "] " << str << std::endl;
     } else {
         std::cout << str << std::endl;
     }
@@ -19,6 +21,4 @@ int main() {
 
     // variables
     strOut("Variables Initialized.");
-
-    strOut()
 }
