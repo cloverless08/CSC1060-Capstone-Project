@@ -49,12 +49,12 @@ int main() {
     SDL_RenderClear(renderer);
 
     // temp for testing
-    for (int i = 1; i <= 10; i++) {
-        SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-        SDL_RenderDrawPoint(renderer, WIDTH/i, HEIGHT/i);
-        SDL_RenderPresent(renderer);
-        SDL_Delay(500);
-    }
+
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderDrawLine(renderer, 0, 0, WIDTH, HEIGHT);
+    SDL_RenderDrawLine(renderer, WIDTH, 0, 0, HEIGHT);
+    SDL_RenderPresent(renderer);
+    SDL_Delay(5000);
 
     return 0;
 }
