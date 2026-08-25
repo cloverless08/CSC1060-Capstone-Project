@@ -5,14 +5,14 @@
 #include <array>
 
 // function for clean console output with labels
-int strOut(const std::string str = "Nothing to output (edit strOut() to fix)", std::string type = "standard") {
-    if (type != "standard") {
-        for (char &c : type) {
+int strOut(const std::string msg = "Nothing to output (edit strOut() to fix)", std::string label = "standard") {
+    if (label != "standard") {
+        for (char &c : label) {
             c = static_cast<char>(std::toupper(static_cast<unsigned char>(c))); // changes string 'type' to all upper
         }
-        std::cout << "[" + type + "] " << str << std::endl; // output with label
+        std::cout << "[" + label + "] " << msg << std::endl; // output with label
     } else {
-        std::cout << str << std::endl; // output without label
+        std::cout << msg << std::endl; // output without label
     }
 
     return 0;
