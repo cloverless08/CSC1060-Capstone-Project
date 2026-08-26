@@ -153,6 +153,30 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CSC1060_Capstone_Project.dir/build.make CMakeFiles/CSC1060_Capstone_Project.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+main_utils.o: main_utils.cpp.o
+.PHONY : main_utils.o
+
+# target to build an object file
+main_utils.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CSC1060_Capstone_Project.dir/build.make CMakeFiles/CSC1060_Capstone_Project.dir/main_utils.cpp.o
+.PHONY : main_utils.cpp.o
+
+main_utils.i: main_utils.cpp.i
+.PHONY : main_utils.i
+
+# target to preprocess a source file
+main_utils.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CSC1060_Capstone_Project.dir/build.make CMakeFiles/CSC1060_Capstone_Project.dir/main_utils.cpp.i
+.PHONY : main_utils.cpp.i
+
+main_utils.s: main_utils.cpp.s
+.PHONY : main_utils.s
+
+# target to generate assembly for a file
+main_utils.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CSC1060_Capstone_Project.dir/build.make CMakeFiles/CSC1060_Capstone_Project.dir/main_utils.cpp.s
+.PHONY : main_utils.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -165,6 +189,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... main_utils.o"
+	@echo "... main_utils.i"
+	@echo "... main_utils.s"
 .PHONY : help
 
 

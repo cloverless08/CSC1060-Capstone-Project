@@ -3,6 +3,8 @@ project(CSC1060_Capstone_Project CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 find_package(SDL2 REQUIRED CONFIG)
-add_executable(CSC1060_Capstone_Project main.cpp)
+add_executable(CSC1060_Capstone_Project main.cpp
+        main_utils.cpp
+        main_utils.h)
 
 target_link_libraries(CSC1060_Capstone_Project PRIVATE SDL2::SDL2 SDL2::SDL2main)
