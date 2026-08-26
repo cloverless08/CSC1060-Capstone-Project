@@ -11,6 +11,7 @@
 #include <cctype>
 #include <array>
 #include <random>
+#include <string>
 
 // local headers
 #include "main_utils.h"
@@ -40,12 +41,15 @@ int main() {
     double camYaw;
     strOut("Variables Initialized.", msgType[2]);
 
+    strOut("This program is under development and may not function as expected.", msgType[3]);
+
     // structs
     struct Vec3 {
         double x;
         double y;
         double z;
     };
+    strOut("Structs Initialized.", msgType[2]);
 
     // create canvas (pixel buffer) in memory
     uint32_t pixelBuffer[STANDARD_RESOLUTION_WIDTH * STANDARD_RESOLUTION_HEIGHT];
