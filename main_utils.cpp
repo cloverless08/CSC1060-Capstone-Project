@@ -4,6 +4,7 @@
 
 #include "main_utils.h"
 #include <iostream>
+#include <random>
 
 #define RESET   "\033[0m"
 #define RED     "\033[31m"
@@ -31,4 +32,11 @@ int strOut(const std::string msg, std::string label) {
     }
 
     return 0;
+}
+
+int randInt(int rangeMin, int rangeMax) {
+    static std::random_device rd;
+    static std::mt19937 gen(rd());
+    std::uniform_int_distribution<> distr(rangeMin, rangeMax);
+    return distr(gen);
 }
