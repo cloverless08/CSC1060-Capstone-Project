@@ -82,10 +82,10 @@ int main() {
             }
         }
 
+        // temp
         int randomX = randInt(0, STANDARD_RESOLUTION_WIDTH);
         int randomY = randInt(0, STANDARD_RESOLUTION_HEIGHT);
 
-        // temp
         SDL_SetRenderDrawColor(renderer, 0, 0, 255, 255);
         SDL_RenderDrawLine(renderer, randomX, randomY, STANDARD_RESOLUTION_WIDTH, STANDARD_RESOLUTION_HEIGHT);
         SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
