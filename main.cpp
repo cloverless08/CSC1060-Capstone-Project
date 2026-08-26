@@ -70,7 +70,7 @@ int main() {
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
     SDL_RenderClear(renderer);
     SDL_Delay(1000);
-    
+
     // window loop
     while (running) {
         // poll all events
@@ -82,13 +82,16 @@ int main() {
             }
         }
 
+        int randomX = randInt(0, STANDARD_RESOLUTION_WIDTH);
+        int randomY = randInt(0, STANDARD_RESOLUTION_HEIGHT);
+
         // temp
         SDL_SetRenderDrawColor(renderer, 0, 0, 255, 255);
-        SDL_RenderDrawLine(renderer, 0, 0, STANDARD_RESOLUTION_WIDTH, STANDARD_RESOLUTION_HEIGHT);
+        SDL_RenderDrawLine(renderer, randomX, randomY, STANDARD_RESOLUTION_WIDTH, STANDARD_RESOLUTION_HEIGHT);
         SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
-        SDL_RenderDrawLine(renderer, STANDARD_RESOLUTION_WIDTH, 0, 0, STANDARD_RESOLUTION_HEIGHT);
+        SDL_RenderDrawLine(renderer, STANDARD_RESOLUTION_WIDTH, randomY, randomX, STANDARD_RESOLUTION_HEIGHT);
         SDL_RenderPresent(renderer);
-        SDL_Delay(25);
+        SDL_Delay(500);
     }
 
     return 0;

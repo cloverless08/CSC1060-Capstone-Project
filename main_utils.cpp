@@ -34,6 +34,7 @@ int strOut(const std::string msg, std::string label) {
     return 0;
 }
 
+// generates random integer
 int randInt(int rangeMin, int rangeMax) {
     static std::random_device rd;
     static std::mt19937 gen(rd());
