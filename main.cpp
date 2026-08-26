@@ -54,6 +54,13 @@ int main() {
     double camYaw;
     strOut("Variables Initialized.", msgType[2]);
 
+    // structs
+    struct Vec3 {
+        double x;
+        double y;
+        double z;
+    };
+
     // create canvas (pixel buffer) in memory
     uint32_t pixelBuffer[STANDARD_RESOLUTION_WIDTH * STANDARD_RESOLUTION_HEIGHT];
     strOut("Pixel Buffer Initialized.", msgType[2]);
