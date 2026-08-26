@@ -17,27 +17,6 @@
 #define MAGENTA "\033[35m"
 #define CYAN    "\033[36m"
 
-/* function for clean, dynamic console output with labels
-static int strOut(const std::string& msg = "Nothing to output (edit strOut() to fix)", std::string label = "standard") {
-    if (label != "standard") {
-        for (char &c : label) {
-            c = static_cast<char>(std::toupper(static_cast<unsigned char>(c))); // changes string 'label' to all upper
-        }
-        if (label == "ERROR") {
-            std::cout << RED << "[" + label + "] " << msg << RESET << std::endl; // output with label
-        } else if (label == "WARN") {
-            std::cout << YELLOW << "[" + label + "] " << msg << RESET << std::endl; // output with label
-        } else if (label == "SETUP") {
-            std::cout << CYAN << "[" + label + "] " << msg << RESET << std::endl; // output with label
-        }
-    } else {
-        std::cout << RESET << msg << RESET<< std::endl; // output without label
-    }
-
-    return 0;
-}
-*/ //now coming from main_utils.cpp
-
 int main() {
     // constants
     constexpr int STANDARD_RESOLUTION_WIDTH = 640;
