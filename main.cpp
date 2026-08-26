@@ -83,15 +83,18 @@ int main() {
         }
 
         // temp
-        int randomX = randInt(0, STANDARD_RESOLUTION_WIDTH);
-        int randomY = randInt(0, STANDARD_RESOLUTION_HEIGHT);
+        int randomX1 = randInt(0, STANDARD_RESOLUTION_WIDTH);
+        int randomX2 = randInt(0, STANDARD_RESOLUTION_WIDTH);
+        int randomY1 = randInt(0, STANDARD_RESOLUTION_HEIGHT);
+        int randomY2 = randInt(0, STANDARD_RESOLUTION_HEIGHT);
+        int randomColorR = randInt(0,255);
+        int randomColorG = randInt(0,255);
+        int randomColorB= randInt(0,255);
 
-        SDL_SetRenderDrawColor(renderer, 0, 0, 255, 255);
-        SDL_RenderDrawLine(renderer, randomX, randomY, STANDARD_RESOLUTION_WIDTH, STANDARD_RESOLUTION_HEIGHT);
-        SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
-        SDL_RenderDrawLine(renderer, STANDARD_RESOLUTION_WIDTH, randomY, randomX, STANDARD_RESOLUTION_HEIGHT);
+        SDL_SetRenderDrawColor(renderer, randomColorR, randomColorG, randomColorB, 255);
+        SDL_RenderDrawLine(renderer, randomX1, randomY1, randomX2, randomY2);
         SDL_RenderPresent(renderer);
-        SDL_Delay(500);
+        SDL_Delay(250);
     }
 
     return 0;

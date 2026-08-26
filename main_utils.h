@@ -11,4 +11,5 @@
 #endif //CSC1060_CAPSTONE_PROJECT_MAIN_UTILS_H
 
 int strOut(const std::string msg = "Nothing to output (edit strOut() to fix)", std::string label = "standard");
+
 int randInt(int rangeMin, int rangeMax);
