@@ -1,3 +1,10 @@
+/*
+ *      CSC1060 at FRCC
+ *      Carrick De Min
+ *      Capstone Project
+ *      v0.3.3
+ */
+
 #include <SDL2/SDL.h>
 #include <vector>
 #include <iostream>
@@ -8,7 +15,7 @@
 // local headers
 #include "main_utils.h"
 
-// ANSI Color Code Macros
+// ANSI color code macros
 #define RESET   "\033[0m"
 #define RED     "\033[31m"
 #define GREEN   "\033[32m"
@@ -58,6 +65,7 @@ int main() {
     // clears screen to black
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
     SDL_RenderClear(renderer);
+    SDL_Delay(1000);
 
     // window loop
     while (running) {
