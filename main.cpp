@@ -25,14 +25,25 @@
 #define MAGENTA "\033[35m"
 #define CYAN    "\033[36m"
 
+// global constants
+constexpr int STANDARD_RESOLUTION_WIDTH = 640;
+constexpr int STANDARD_RESOLUTION_HEIGHT = 480;
+constexpr int MOVING_RESOLUTION_HEIGHT = 320;
+constexpr int MOVING_RESOLUTION_WIDTH = 240;
+const std::array<std::string, 4> msgType = {"SYSTEM", "ERROR", "SETUP", "WARN"}; // strOut() helpful labels
+//strOut("Constants Initialized.", msgType[2]); // currently erroring for bc idk why
+
+// global structs
+struct Vec3 {
+    double x = 0.0;
+    double y = 0.0;
+    double z = 0.0;
+};
+
+// function declarations (for defined later)
+void advanceTick();
+
 int main() {
-    // constants
-    constexpr int STANDARD_RESOLUTION_WIDTH = 640;
-    constexpr int STANDARD_RESOLUTION_HEIGHT = 480;
-    constexpr int MOVING_RESOLUTION_HEIGHT = 320;
-    constexpr int MOVING_RESOLUTION_WIDTH = 240;
-    const std::array<std::string, 4> msgType = {"SYSTEM", "ERROR", "SETUP", "WARN"}; // strOut() helpful labels
-    strOut("Constants Initialized.", msgType[2]);
 
     // variables
     bool running = true;
@@ -44,12 +55,13 @@ int main() {
     strOut("This program is under development and may not function as expected.", msgType[3]);
 
     // structs
-    struct Vec3 {
+    /*struct Vec3 {
         double x;
         double y;
         double z;
     };
     strOut("Structs Initialized.", msgType[2]);
+    */ //moved outside of func main()
 
     // create canvas (pixel buffer) in memory
     uint32_t pixelBuffer[STANDARD_RESOLUTION_WIDTH * STANDARD_RESOLUTION_HEIGHT];
@@ -99,3 +111,7 @@ int main() {
 
     return 0;
 }
+
+void advanceTick(Vec3) {
+    // call for every tick of simulation, empty for now
+};
