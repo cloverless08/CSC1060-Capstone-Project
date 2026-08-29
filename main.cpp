@@ -17,7 +17,7 @@
 // local headers
 #include "main_utils.h"
 
-// ANSI color code macros
+// ANSI color code and other macros
 #define RESET   "\033[0m"
 #define RED     "\033[31m"
 #define GREEN   "\033[32m"
@@ -25,6 +25,8 @@
 #define BLUE    "\033[34m"
 #define MAGENTA "\033[35m"
 #define CYAN    "\033[36m"
+
+#define newline "\n"
 
 // global constants
 constexpr int STANDARD_RESOLUTION_WIDTH = 640;
@@ -63,7 +65,7 @@ int main() {
     int x = 0;
     int y = 0;
     int r = 255; // color red
-    int g = 255; // color green
+    int g = 0; // color green
     int b = 255; // color blue
     int a = 255; // color alpha (transparency)
 
@@ -130,6 +132,7 @@ int main() {
 
 
     // window loop
+    StrOut("Starting Program Loop...", msgType[0]);
     while (running) {
         // poll all events
         while (SDL_PollEvent(&event)) {
@@ -172,6 +175,7 @@ int main() {
         SDL_Delay(1000);
 
     }
+    StrOut("Closing Program Loop...", msgType[0]);
 
     // clean up memory on app close
     //delete[] pixelBuffer;

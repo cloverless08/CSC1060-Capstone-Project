@@ -14,6 +14,8 @@
 #define MAGENTA "\033[35m"
 #define CYAN    "\033[36m"
 
+#define newline "\n"
+
 // function for clean, dynamic console output with labels
 int StrOut(const std::string msg, std::string label) {
     if (label != "standard") {
@@ -49,4 +51,9 @@ void SetPixel(uint32_t* buffer, int width, int height, int x, int y, uint8_t r, 
         uint32_t color = (r << 24) | (g << 16) | (b << 8) | a; // translates base-255 into proper color format
         buffer[(y * width) + x] = color;
     }
+}
+
+void TerminalInfoHeader() {
+    std::cout << GREEN;
+    std::cout << "====================================" << std::endl;
 }
