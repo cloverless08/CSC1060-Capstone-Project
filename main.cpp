@@ -39,8 +39,12 @@ struct Vec3 {
     double z = 0.0;
 };
 
-// function declarations (for defined later)
-void loop();
+void loop(Vec3 ray) {
+    // call for every tick of simulation, empty for now
+    std::cout << ray.x << std::endl;
+    std::cout << ray.y << std::endl;
+    std::cout << ray.y << std::endl;
+};
 
 int main() {
 
@@ -49,6 +53,7 @@ int main() {
     double camDistance;
     double camPitch;
     double camYaw;
+    Vec3 ray;
     strOut("Local Variables Initialized.", msgType[2]);
 
     strOut("This program is under development and may not function as expected.", msgType[3]);
@@ -106,11 +111,8 @@ int main() {
         SDL_RenderDrawLine(renderer, randomX1, randomY1, randomX2, randomY2);
         SDL_RenderPresent(renderer);
         SDL_Delay(250);
+
     }
 
     return 0;
 }
-
-void loop(Vec3) {
-    // call for every tick of simulation, empty for now
-};
