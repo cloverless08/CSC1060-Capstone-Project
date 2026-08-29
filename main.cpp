@@ -125,7 +125,12 @@ int main() {
         std::vector<double> xyz2 = loopCalculation(ray);
 
         // update pixel buffer
-        //SetPixel(pixelBuffer, STANDARD_RESOLUTION_WIDTH, STANDARD_RESOLUTION_HEIGHT, r, g , b, a );
+        SetPixel(
+            pixelBuffer.data(),
+            STANDARD_RESOLUTION_WIDTH, STANDARD_RESOLUTION_HEIGHT,
+            (STANDARD_RESOLUTION_WIDTH / 2), (STANDARD_RESOLUTION_HEIGHT / 2),
+            r, g, b, a
+            );
 
         // update render texture (pixel buffer)
         SDL_UpdateTexture(
