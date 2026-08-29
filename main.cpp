@@ -12,6 +12,7 @@
 #include <array>
 #include <random>
 #include <string>
+#include <cmath>
 
 // local headers
 #include "main_utils.h"
@@ -99,6 +100,7 @@ int main() {
             }
         }
 
+        //loop variables
         std::vector<double> xyz = loop(ray);
         std::vector<double> xyz2 = loop(ray);
 
