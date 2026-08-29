@@ -2,7 +2,7 @@
 //  CSC1060 at FRCC
 //  Carrick De Min
 //  Capstone Project
-//  v0.3.3
+//  v0.4.0
 /* ========================================================================== */
 
 #include <SDL2/SDL.h>
@@ -42,15 +42,6 @@ struct Vec3 {
     double z = 0.0;
 };
 
-/*
-std::vector<double> loopCalculation(Vec3 ray) {
-    // call for every tick of simulation, temp for now
-    ray.x = RandInt(0,STANDARD_RESOLUTION_HEIGHT);
-    ray.y = RandInt(0,STANDARD_RESOLUTION_HEIGHT);
-    ray.z = RandInt(0,STANDARD_RESOLUTION_HEIGHT);
-    return {ray.x, ray.y, ray.z};
-};
-*/
 
 int main() {
 
@@ -146,19 +137,12 @@ int main() {
         //loop variables
 
         // update pixel buffer
-        /*
-          SetPixel(
-            pixelBuffer.data(),
-            STANDARD_RESOLUTION_WIDTH, STANDARD_RESOLUTION_HEIGHT,
-            (STANDARD_RESOLUTION_WIDTH / 2), (STANDARD_RESOLUTION_HEIGHT / 2),
-            r, g, b, a
-            );
-        */
-        for (int py = 200; py < 280; py++) {
+         for (int py = 200; py < 280; py++) {
             for (int px = 280; px < 360; px++) {
                 SetPixel(pixelBuffer.data(), STANDARD_RESOLUTION_WIDTH, STANDARD_RESOLUTION_HEIGHT, px, py, r, g, b, a);
             }
         }
+
 
         // update render texture (pixel buffer)
         SDL_UpdateTexture(
@@ -172,8 +156,7 @@ int main() {
         SDL_RenderClear(renderer);
         SDL_RenderCopy(renderer, pixelBufferTexture, nullptr, nullptr);
         SDL_RenderPresent(renderer);
-        SDL_Delay(1000);
-
+        SDL_Delay(250);
     }
     StrOut("Closing Program Loop...", msgType[0]);
 
