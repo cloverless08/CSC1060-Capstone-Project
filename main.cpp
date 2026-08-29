@@ -40,7 +40,15 @@ struct Vec3 {
 };
 
 void loop(Vec3 ray) {
-    // call for every tick of simulation, empty for now
+    // call for every tick of simulation, temp for now
+    std::cout << ray.x << std::endl;
+    std::cout << ray.y << std::endl;
+    std::cout << ray.y << std::endl;
+
+    ray.x = randInt(0,100);
+    ray.y = randInt(0,100);
+    ray.z = randInt(0,100);
+
     std::cout << ray.x << std::endl;
     std::cout << ray.y << std::endl;
     std::cout << ray.y << std::endl;
@@ -103,6 +111,7 @@ int main() {
         SDL_RenderPresent(renderer);
         SDL_Delay(250);
 
+        loop(ray);
     }
 
     return 0;
