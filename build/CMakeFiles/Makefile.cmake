@@ -121,5 +121,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/CSC1060_Capstone_Project.dir/DependInfo.cmake"
+  "CMakeFiles/CSC1060_CAPTSONE_PROJECT.dir/DependInfo.cmake"
   )
