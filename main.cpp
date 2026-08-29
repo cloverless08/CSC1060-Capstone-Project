@@ -55,7 +55,16 @@ int main() {
     double camDistance;
     double camPitch;
     double camYaw;
+
     Vec3 ray;
+
+    int x = 0;
+    int y = 0;
+    int r = 255; // color red
+    int g = 255; // color green
+    int b = 255; // color blue
+    int a = 255; // color alpha (transparency)
+
     strOut("Local Variables Initialized.", msgType[2]);
 
     //intial warnings and output
@@ -64,8 +73,16 @@ int main() {
     strOut("This program is under development and may not function as expected.", msgType[3]);
 
     // structs required for sdl2
-    SDL_Window* window = nullptr;
-    SDL_Renderer* renderer = nullptr;
+    SDL_Window* window = SDL_CreateWindow(
+        "Pixel Buffer Demo",
+        SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
+        STANDARD_RESOLUTION_WIDTH, STANDARD_RESOLUTION_HEIGHT,
+        SDL_WINDOW_SHOWN
+        );
+    SDL_Renderer* renderer = SDL_CreateRenderer(
+        window, -1,
+        SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC
+        );
     SDL_Texture* pixelBufferTexture = SDL_CreateTexture(
         renderer,
         SDL_PIXELFORMAT_ARGB8888, // 32-bit format for 8 bits per channel
@@ -75,7 +92,10 @@ int main() {
     strOut("SDL2 Structs Initialized.", msgType[2]);
 
     // create canvas pixel buffer in memory
-    auto* pixelBuffer = new uint32_t[STANDARD_RESOLUTION_WIDTH * STANDARD_RESOLUTION_HEIGHT] ;
+    //auto* pixelBuffer = new uint32_t[STANDARD_RESOLUTION_WIDTH * STANDARD_RESOLUTION_HEIGHT] ;
+    std::vector<uint32_t> pixelBuffer(STANDARD_RESOLUTION_WIDTH * STANDARD_RESOLUTION_WIDTH, 0);
+    int bufferStart = y * STANDARD_RESOLUTION_WIDTH + x;
+    pixelBuffer[bufferStart] = (r << 24U) | (g << 16U) | (b << 8U) | a;
     strOut("Pixel Buffer Initialized.", msgType[2]);
 
     SDL_Init(SDL_INIT_EVERYTHING);
@@ -103,35 +123,30 @@ int main() {
         //loop variables
         std::vector<double> xyz = loopCalculation(ray);
         std::vector<double> xyz2 = loopCalculation(ray);
-        int r = 255; // color red
-        int g = 255; // color green
-        int b = 255; // color blue
-        int a = 255; // color alpha (transparency)
 
         // update pixel buffer
-        SetPixel(pixelBuffer, STANDARD_RESOLUTION_WIDTH, STANDARD_RESOLUTION_HEIGHT, r, g , b, a );
+        //SetPixel(pixelBuffer, STANDARD_RESOLUTION_WIDTH, STANDARD_RESOLUTION_HEIGHT, r, g , b, a );
 
         // update render texture (pixel buffer)
         SDL_UpdateTexture(
-        pixelBufferTexture,
-        NULL,                   // NULL updates the entire texture
-        pixelBuffer,            // Pointer to our raw CPU buffer
-        STANDARD_RESOLUTION_WIDTH * sizeof(uint32_t) // Pitch: number of bytes in one row of pixels
+            pixelBufferTexture,
+            nullptr,                   // NULL updates the entire texture
+            pixelBuffer.data(),            // Pointer to our raw CPU buffer
+            STANDARD_RESOLUTION_WIDTH * sizeof(uint32_t) // Pitch: number of bytes in one row of pixels
         );
 
         // render loop
         SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
         SDL_RenderClear(renderer);
 
-        SDL_RenderCopy(renderer, pixelBufferTexture, NULL, NULL);
+        SDL_RenderCopy(renderer, pixelBufferTexture, nullptr, nullptr);
         SDL_RenderPresent(renderer);
-        SDL_Delay(250);
+        SDL_Delay(1000);
 
     }
 
     // clean up memory on app close
-
-    delete[] pixelBuffer;
+    //delete[] pixelBuffer;
     strOut("Pixel Buffer Deleted", msgType[3]);
 
     SDL_DestroyTexture(pixelBufferTexture);
