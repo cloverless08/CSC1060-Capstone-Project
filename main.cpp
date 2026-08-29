@@ -131,5 +131,14 @@ int main() {
         SDL_Delay(250);
     }
 
+    // clean up memory on app close
+
+    delete[] pixelBuffer;
+
+    SDL_DestroyTexture(pixelBufferTexture);
+    SDL_DestroyRenderer(renderer);
+    SDL_DestroyWindow(window);
+    SDL_Quit();
+
     return 0;
 }
