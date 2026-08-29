@@ -46,7 +46,7 @@ int randInt(int rangeMin, int rangeMax) {
 
 void SetPixel(uint32_t* buffer, int width, int height, int x, int y, uint8_t r, uint8_t g, uint8_t b, uint8_t a) {
     if (x >= 0 && x < width && y >= 0 && y < height) {
-        uint32_t color = (a << 24) | (r << 16) | (g << 8) | b;
+        uint32_t color = (a << 24) | (r << 16) | (g << 8) | b; // translates base-255 into proper color format
         buffer[(y * width) + x] = color;
     }
 }

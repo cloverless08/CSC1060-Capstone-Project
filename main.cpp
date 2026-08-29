@@ -112,6 +112,13 @@ int main() {
         //loop variables
         std::vector<double> xyz = loop(ray);
         std::vector<double> xyz2 = loop(ray);
+        int r = 255; // color red
+        int g = 255; // color green
+        int b = 255; // color blue
+        int a = 255; // color alpha (transparency)
+
+        // update pixel buffer
+        SetPixel(pixelBuffer, STANDARD_RESOLUTION_WIDTH, STANDARD_RESOLUTION_HEIGHT, r, g , b, a );
 
         // update render texture (pixel buffer)
         SDL_UpdateTexture(
