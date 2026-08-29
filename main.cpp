@@ -39,7 +39,7 @@ struct Vec3 {
     double z = 0.0;
 };
 
-void loop(Vec3 ray) {
+std::array<double, 3> loop(Vec3 ray) {
     // call for every tick of simulation, temp for now
     std::cout << ray.x << std::endl;
     std::cout << ray.y << std::endl;
@@ -52,6 +52,10 @@ void loop(Vec3 ray) {
     std::cout << ray.x << std::endl;
     std::cout << ray.y << std::endl;
     std::cout << ray.y << std::endl;
+
+    std::array<double, 3> xyz = {ray.x, ray.y, ray.z};
+
+    return xyz;
 };
 
 int main() {
@@ -97,6 +101,8 @@ int main() {
             }
         }
 
+        loop(ray);
+
         // temp
         int randomX1 = randInt(0, STANDARD_RESOLUTION_WIDTH);
         int randomX2 = randInt(0, STANDARD_RESOLUTION_WIDTH);
@@ -110,8 +116,6 @@ int main() {
         SDL_RenderDrawLine(renderer, randomX1, randomY1, randomX2, randomY2);
         SDL_RenderPresent(renderer);
         SDL_Delay(250);
-
-        loop(ray);
     }
 
     return 0;
