@@ -26,6 +26,8 @@ int strOut(const std::string msg, std::string label) {
             std::cout << YELLOW << "[" + label + "] " << msg << RESET << std::endl; // output with label
         } else if (label == "SETUP") {
             std::cout << CYAN << "[" + label + "] " << msg << RESET << std::endl; // output with label
+        } else {
+            std::cout << RESET << "[" + label + "] " << msg << RESET << std::endl; // output with custom label
         }
     } else {
         std::cout << RESET << msg << RESET<< std::endl; // output without label

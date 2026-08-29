@@ -8,11 +8,11 @@
 #include <SDL2/SDL.h>
 #include <vector>
 #include <iostream>
-#include <cctype>
 #include <array>
 #include <random>
 #include <string>
 #include <cmath>
+#include <cctype>
 
 // local headers
 #include "main_utils.h"
@@ -67,16 +67,25 @@ int main() {
     Vec3 ray;
     strOut("Local Variables Initialized.", msgType[2]);
 
+    //intial warnings and output
+    strOut("CSC1060 - Capstone Project", "info");
+    strOut("By Carrick De Min, Fall 2026", "info");
     strOut("This program is under development and may not function as expected.", msgType[3]);
-
-    // create canvas (pixel buffer) in memory
-    uint32_t pixelBuffer[STANDARD_RESOLUTION_WIDTH * STANDARD_RESOLUTION_HEIGHT];
-    strOut("Pixel Buffer Initialized.", msgType[2]);
 
     // structs required for sdl2
     SDL_Window* window = nullptr;
     SDL_Renderer* renderer = nullptr;
+    SDL_Texture* pixelBufferTexture = SDL_CreateTexture(
+        renderer,
+        SDL_PIXELFORMAT_ARGB8888, // 32-bit format for 8 bits per channel
+        SDL_TEXTUREACCESS_STREAMING, // allows fast cpu to gpu updates
+        STANDARD_RESOLUTION_WIDTH, STANDARD_RESOLUTION_HEIGHT // screen resolution
+        );
     strOut("SDL2 Structs Initialized.", msgType[2]);
+
+    // create canvas pixel buffer in memory
+    auto* pixelBuffer = new uint32_t[STANDARD_RESOLUTION_WIDTH * STANDARD_RESOLUTION_HEIGHT] ;
+    strOut("Pixel Buffer Initialized.", msgType[2]);
 
     SDL_Init(SDL_INIT_EVERYTHING);
     SDL_CreateWindowAndRenderer(STANDARD_RESOLUTION_WIDTH, STANDARD_RESOLUTION_HEIGHT, 0, &window, &renderer);
