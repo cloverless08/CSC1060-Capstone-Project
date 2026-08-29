@@ -110,7 +110,7 @@ int main() {
 
     SDL_Texture* pixelBufferTexture = SDL_CreateTexture(
         renderer,
-        SDL_PIXELFORMAT_ARGB8888, // 32-bit format for 8 bits per channel
+        SDL_PIXELFORMAT_RGBA8888, // 32-bit format for 8 bits per channel
         SDL_TEXTUREACCESS_STREAMING, // allows fast cpu to gpu updates
         STANDARD_RESOLUTION_WIDTH, STANDARD_RESOLUTION_HEIGHT // screen resolution
         );
@@ -143,12 +143,19 @@ int main() {
         //loop variables
 
         // update pixel buffer
-        SetPixel(
+        /*
+          SetPixel(
             pixelBuffer.data(),
             STANDARD_RESOLUTION_WIDTH, STANDARD_RESOLUTION_HEIGHT,
             (STANDARD_RESOLUTION_WIDTH / 2), (STANDARD_RESOLUTION_HEIGHT / 2),
             r, g, b, a
             );
+        */
+        for (int py = 200; py < 280; py++) {
+            for (int px = 280; px < 360; px++) {
+                SetPixel(pixelBuffer.data(), STANDARD_RESOLUTION_WIDTH, STANDARD_RESOLUTION_HEIGHT, px, py, r, g, b, a);
+            }
+        }
 
         // update render texture (pixel buffer)
         SDL_UpdateTexture(
