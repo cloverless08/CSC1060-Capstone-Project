@@ -31,7 +31,6 @@ constexpr int STANDARD_RESOLUTION_HEIGHT = 480;
 constexpr int MOVING_RESOLUTION_HEIGHT = 320;
 constexpr int MOVING_RESOLUTION_WIDTH = 240;
 const std::array<std::string, 4> msgType = {"SYSTEM", "ERROR", "SETUP", "WARN"}; // strOut() helpful labels
-//strOut("Constants Initialized.", msgType[2]); // currently erroring for bc idk why
 
 // global structs
 struct Vec3 {
@@ -41,7 +40,7 @@ struct Vec3 {
 };
 
 // function declarations (for defined later)
-void advanceTick();
+void loop();
 
 int main() {
 
@@ -112,6 +111,6 @@ int main() {
     return 0;
 }
 
-void advanceTick(Vec3) {
+void loop(Vec3) {
     // call for every tick of simulation, empty for now
 };
