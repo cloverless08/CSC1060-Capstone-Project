@@ -58,15 +58,6 @@ int main() {
 
     strOut("This program is under development and may not function as expected.", msgType[3]);
 
-    // structs
-    /*struct Vec3 {
-        double x;
-        double y;
-        double z;
-    };
-    strOut("Structs Initialized.", msgType[2]);
-    */ //moved outside of func main()
-
     // create canvas (pixel buffer) in memory
     uint32_t pixelBuffer[STANDARD_RESOLUTION_WIDTH * STANDARD_RESOLUTION_HEIGHT];
     strOut("Pixel Buffer Initialized.", msgType[2]);
