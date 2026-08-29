@@ -113,32 +113,34 @@ int main() {
         std::vector<double> xyz = loop(ray);
         std::vector<double> xyz2 = loop(ray);
 
-        // temp
-        /*
-        int randomX1 = randInt(0, STANDARD_RESOLUTION_WIDTH);
-        int randomX2 = randInt(0, STANDARD_RESOLUTION_WIDTH);
-        int randomY1 = randInt(0, STANDARD_RESOLUTION_HEIGHT);
-        int randomY2 = randInt(0, STANDARD_RESOLUTION_HEIGHT);
-        */
+        // update render texture (pixel buffer)
+        SDL_UpdateTexture(
+        pixelBufferTexture,
+        NULL,                   // NULL updates the entire texture
+        pixelBuffer,            // Pointer to our raw CPU buffer
+        STANDARD_RESOLUTION_WIDTH * sizeof(uint32_t) // Pitch: number of bytes in one row of pixels
+        );
 
-        int randomColorR = randInt(0,255);
-        int randomColorG = randInt(0,255);
-        int randomColorB= randInt(0,255);
+        // render loop
+        SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+        SDL_RenderClear(renderer);
 
-        SDL_SetRenderDrawColor(renderer, randomColorR, randomColorG, randomColorB, 255);
-        SDL_RenderDrawLine(renderer, xyz[0], xyz[1], xyz2[0], xyz2[1]);
+        SDL_RenderCopy(renderer, pixelBufferTexture, NULL, NULL);
         SDL_RenderPresent(renderer);
         SDL_Delay(250);
+
     }
 
     // clean up memory on app close
 
     delete[] pixelBuffer;
+    strOut("Pixel Buffer Deleted", msgType[3]);
 
     SDL_DestroyTexture(pixelBufferTexture);
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
     SDL_Quit();
+    strOut("SDL Structs Deleted", msgType[3]);
 
     return 0;
 }
