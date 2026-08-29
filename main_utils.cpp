@@ -15,7 +15,7 @@
 #define CYAN    "\033[36m"
 
 // function for clean, dynamic console output with labels
-int strOut(const std::string msg, std::string label) {
+int StrOut(const std::string msg, std::string label) {
     if (label != "standard") {
         for (char &c : label) {
             c = static_cast<char>(std::toupper(static_cast<unsigned char>(c))); // changes string 'label' to all upper
@@ -37,7 +37,7 @@ int strOut(const std::string msg, std::string label) {
 }
 
 // generates random integer
-int randInt(int rangeMin, int rangeMax) {
+int RandInt(int rangeMin, int rangeMax) {
     static std::random_device rd;
     static std::mt19937 gen(rd());
     std::uniform_int_distribution<> distr(rangeMin, rangeMax);

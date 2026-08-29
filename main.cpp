@@ -40,13 +40,15 @@ struct Vec3 {
     double z = 0.0;
 };
 
+/*
 std::vector<double> loopCalculation(Vec3 ray) {
     // call for every tick of simulation, temp for now
-    ray.x = randInt(0,STANDARD_RESOLUTION_HEIGHT);
-    ray.y = randInt(0,STANDARD_RESOLUTION_HEIGHT);
-    ray.z = randInt(0,STANDARD_RESOLUTION_HEIGHT);
+    ray.x = RandInt(0,STANDARD_RESOLUTION_HEIGHT);
+    ray.y = RandInt(0,STANDARD_RESOLUTION_HEIGHT);
+    ray.z = RandInt(0,STANDARD_RESOLUTION_HEIGHT);
     return {ray.x, ray.y, ray.z};
 };
+*/
 
 int main() {
 
@@ -65,49 +67,67 @@ int main() {
     int b = 255; // color blue
     int a = 255; // color alpha (transparency)
 
-    strOut("Local Variables Initialized.", msgType[2]);
+    StrOut("Local Variables Initialized.", msgType[2]);
+
 
     //intial warnings and output
-    strOut("CSC1060 - Capstone Project", "info");
-    strOut("By Carrick De Min, Fall 2026", "info");
-    strOut("This program is under development and may not function as expected.", msgType[3]);
+    StrOut("CSC1060 - Capstone Project", "info");
+    StrOut("By Carrick De Min, Fall 2026", "info");
+    StrOut("This program is under development and may not function as expected.", msgType[3]);
+
+
+    // initialize sdl2
+    if (SDL_Init(SDL_INIT_VIDEO) != 0) {
+        StrOut(std::string("SDL_Init failed: ") + SDL_GetError(), msgType[1]);
+        return 1;
+    }
+
+    SDL_Event event;
+
+    StrOut("SDL2 Initialized.", msgType[2]);
+
 
     // structs required for sdl2
     SDL_Window* window = SDL_CreateWindow(
-        "Pixel Buffer Demo",
+        "CSC1060 Capstone Project",
         SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
         STANDARD_RESOLUTION_WIDTH, STANDARD_RESOLUTION_HEIGHT,
         SDL_WINDOW_SHOWN
         );
+    if (!window) {
+        StrOut(std::string("CreateWindow failed: ") + SDL_GetError(), msgType[1]);
+        return 1;
+    }
+
     SDL_Renderer* renderer = SDL_CreateRenderer(
         window, -1,
         SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC
         );
+    if (!renderer) {
+        StrOut(std::string("CreateRenderer failed: ") + SDL_GetError(), msgType[1]);
+        return 1;
+    }
+
     SDL_Texture* pixelBufferTexture = SDL_CreateTexture(
         renderer,
         SDL_PIXELFORMAT_ARGB8888, // 32-bit format for 8 bits per channel
         SDL_TEXTUREACCESS_STREAMING, // allows fast cpu to gpu updates
         STANDARD_RESOLUTION_WIDTH, STANDARD_RESOLUTION_HEIGHT // screen resolution
         );
-    strOut("SDL2 Structs Initialized.", msgType[2]);
+    if (!pixelBufferTexture) {
+        StrOut(std::string("CreateTexture failed: ") + SDL_GetError(), msgType[1]);
+        return 1;
+    }
+
+    StrOut("SDL2 Structs Initialized.", msgType[2]);
 
     // create canvas pixel buffer in memory
     //auto* pixelBuffer = new uint32_t[STANDARD_RESOLUTION_WIDTH * STANDARD_RESOLUTION_HEIGHT] ;
-    std::vector<uint32_t> pixelBuffer(STANDARD_RESOLUTION_WIDTH * STANDARD_RESOLUTION_WIDTH, 0);
+    std::vector<uint32_t> pixelBuffer(STANDARD_RESOLUTION_WIDTH * STANDARD_RESOLUTION_HEIGHT, 0);
     int bufferStart = y * STANDARD_RESOLUTION_WIDTH + x;
     pixelBuffer[bufferStart] = (r << 24U) | (g << 16U) | (b << 8U) | a;
-    strOut("Pixel Buffer Initialized.", msgType[2]);
+    StrOut("Pixel Buffer Initialized.", msgType[2]);
 
-    SDL_Init(SDL_INIT_EVERYTHING);
-    SDL_CreateWindowAndRenderer(STANDARD_RESOLUTION_WIDTH, STANDARD_RESOLUTION_HEIGHT, 0, &window, &renderer);
-    //SDL_RenderSetScale(renderer, 1, 1);
-    SDL_Event event;
-    strOut("SDL2 Initialized.", msgType[2]);
-
-    // clears screen to black
-    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
-    SDL_RenderClear(renderer);
-    SDL_Delay(1000);
 
     // window loop
     while (running) {
@@ -121,8 +141,6 @@ int main() {
         }
 
         //loop variables
-        std::vector<double> xyz = loopCalculation(ray);
-        std::vector<double> xyz2 = loopCalculation(ray);
 
         // update pixel buffer
         SetPixel(
@@ -141,9 +159,7 @@ int main() {
         );
 
         // render loop
-        SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
         SDL_RenderClear(renderer);
-
         SDL_RenderCopy(renderer, pixelBufferTexture, nullptr, nullptr);
         SDL_RenderPresent(renderer);
         SDL_Delay(1000);
@@ -152,13 +168,13 @@ int main() {
 
     // clean up memory on app close
     //delete[] pixelBuffer;
-    strOut("Pixel Buffer Deleted", msgType[3]);
+    StrOut("Pixel Buffer Deleted", msgType[3]);
 
     SDL_DestroyTexture(pixelBufferTexture);
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
     SDL_Quit();
-    strOut("SDL Structs Deleted", msgType[3]);
+    StrOut("SDL Structs Deleted", msgType[3]);
 
     return 0;
 }
