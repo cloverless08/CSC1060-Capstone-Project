@@ -26,7 +26,7 @@
 #define MAGENTA "\033[35m"
 #define CYAN    "\033[36m"
 
-#define newline "\n"
+#define NEWLINE "\n"
 
 // global constants
 constexpr int STANDARD_RESOLUTION_WIDTH = 640;
@@ -56,7 +56,7 @@ int main() {
     int x = 0;
     int y = 0;
     int r = 255; // color red
-    int g = 0; // color green
+    int g = 255; // color green
     int b = 255; // color blue
     int a = 255; // color alpha (transparency)
 
