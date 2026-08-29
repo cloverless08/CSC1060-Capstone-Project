@@ -40,20 +40,11 @@ struct Vec3 {
     double z = 0.0;
 };
 
-std::vector<double> loop(Vec3 ray) {
+std::vector<double> loopCalculation(Vec3 ray) {
     // call for every tick of simulation, temp for now
-    std::cout << ray.x << std::endl;
-    std::cout << ray.y << std::endl;
-    std::cout << ray.y << std::endl;
-
     ray.x = randInt(0,STANDARD_RESOLUTION_HEIGHT);
     ray.y = randInt(0,STANDARD_RESOLUTION_HEIGHT);
     ray.z = randInt(0,STANDARD_RESOLUTION_HEIGHT);
-
-    std::cout << ray.x << std::endl;
-    std::cout << ray.y << std::endl;
-    std::cout << ray.z << std::endl;
-
     return {ray.x, ray.y, ray.z};
 };
 
@@ -110,8 +101,8 @@ int main() {
         }
 
         //loop variables
-        std::vector<double> xyz = loop(ray);
-        std::vector<double> xyz2 = loop(ray);
+        std::vector<double> xyz = loopCalculation(ray);
+        std::vector<double> xyz2 = loopCalculation(ray);
         int r = 255; // color red
         int g = 255; // color green
         int b = 255; // color blue
