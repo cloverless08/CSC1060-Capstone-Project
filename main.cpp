@@ -39,23 +39,21 @@ struct Vec3 {
     double z = 0.0;
 };
 
-std::array<double, 3> loop(Vec3 ray) {
+std::vector<double> loop(Vec3 ray) {
     // call for every tick of simulation, temp for now
     std::cout << ray.x << std::endl;
     std::cout << ray.y << std::endl;
     std::cout << ray.y << std::endl;
 
-    ray.x = randInt(0,100);
-    ray.y = randInt(0,100);
-    ray.z = randInt(0,100);
+    ray.x = randInt(0,STANDARD_RESOLUTION_HEIGHT);
+    ray.y = randInt(0,STANDARD_RESOLUTION_HEIGHT);
+    ray.z = randInt(0,STANDARD_RESOLUTION_HEIGHT);
 
     std::cout << ray.x << std::endl;
     std::cout << ray.y << std::endl;
-    std::cout << ray.y << std::endl;
+    std::cout << ray.z << std::endl;
 
-    std::array<double, 3> xyz = {ray.x, ray.y, ray.z};
-
-    return xyz;
+    return {ray.x, ray.y, ray.z};
 };
 
 int main() {
@@ -101,19 +99,23 @@ int main() {
             }
         }
 
-        loop(ray);
+        std::vector<double> xyz = loop(ray);
+        std::vector<double> xyz2 = loop(ray);
 
         // temp
+        /*
         int randomX1 = randInt(0, STANDARD_RESOLUTION_WIDTH);
         int randomX2 = randInt(0, STANDARD_RESOLUTION_WIDTH);
         int randomY1 = randInt(0, STANDARD_RESOLUTION_HEIGHT);
         int randomY2 = randInt(0, STANDARD_RESOLUTION_HEIGHT);
+        */
+
         int randomColorR = randInt(0,255);
         int randomColorG = randInt(0,255);
         int randomColorB= randInt(0,255);
 
         SDL_SetRenderDrawColor(renderer, randomColorR, randomColorG, randomColorB, 255);
-        SDL_RenderDrawLine(renderer, randomX1, randomY1, randomX2, randomY2);
+        SDL_RenderDrawLine(renderer, xyz[0], xyz[1], xyz2[0], xyz2[1]);
         SDL_RenderPresent(renderer);
         SDL_Delay(250);
     }
