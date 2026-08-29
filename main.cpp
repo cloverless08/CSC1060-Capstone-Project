@@ -1,9 +1,9 @@
-/*
- *      CSC1060 at FRCC
- *      Carrick De Min
- *      Capstone Project
- *      v0.3.3
- */
+/* ========================================================================== */
+//  CSC1060 at FRCC
+//  Carrick De Min
+//  Capstone Project
+//  v0.3.3
+/* ========================================================================== */
 
 #include <SDL2/SDL.h>
 #include <vector>
@@ -50,7 +50,7 @@ int main() {
     double camDistance;
     double camPitch;
     double camYaw;
-    strOut("Variables Initialized.", msgType[2]);
+    strOut("Local Variables Initialized.", msgType[2]);
 
     strOut("This program is under development and may not function as expected.", msgType[3]);
 
