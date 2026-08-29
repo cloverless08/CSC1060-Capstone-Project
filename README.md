@@ -17,10 +17,11 @@ To install and run, simply download or clone this repository, navigate to ./buil
 - Find ./CSC1060_CAPSTONE_PROJECT(.exe if windows)
 - Execute via file manager or terminal
 
-## Documentation
+***OR***
 
-[Documentation](https://linktodocumentation)
-
+Download the cross-platform executable here (without source code):
+ - [Google Drive](link TK)
+ - [Dropbox](link TK)
 
 ## Authors
 
