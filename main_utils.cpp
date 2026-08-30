@@ -54,6 +54,12 @@ void SetPixel(uint32_t* buffer, int width, int height, int x, int y, uint8_t r, 
 }
 
 void TerminalInfoHeader() {
+    std::cout << newline;
     std::cout << GREEN;
     std::cout << "====================================" << std::endl;
+    std::cout << "      CSC1060 Black Hole Sim" << std::endl;
+    std::cout << "        By Carrick De Min" << std::endl;
+    std::cout << "====================================" << std::endl;
+    std::cout << GREEN;
+    std::cout << newline;
 }

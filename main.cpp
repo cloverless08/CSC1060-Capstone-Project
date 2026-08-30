@@ -26,7 +26,7 @@
 #define MAGENTA "\033[35m"
 #define CYAN    "\033[36m"
 
-#define NEWLINE "\n"
+#define newline "\n"
 
 // global constants
 constexpr int STANDARD_RESOLUTION_WIDTH = 640;
@@ -44,6 +44,8 @@ struct Vec3 {
 
 
 int main() {
+
+    TerminalInfoHeader();
 
     // variables
     bool running = true;
@@ -156,7 +158,7 @@ int main() {
         SDL_RenderClear(renderer);
         SDL_RenderCopy(renderer, pixelBufferTexture, nullptr, nullptr);
         SDL_RenderPresent(renderer);
-        SDL_Delay(250);
+        SDL_Delay(25);
     }
     StrOut("Closing Program Loop...", msgType[0]);
 
