@@ -46,6 +46,7 @@ struct Vec3 {
 int main() {
 
     TerminalInfoHeader();
+    SDL_Delay(500);
 
     // variables
     bool running = true;
