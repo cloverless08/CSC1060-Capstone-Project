@@ -124,9 +124,12 @@ int main() {
     StrOut("Pixel Buffer Initialized.", msgType[2]);
 
 
+    unsigned int i = 0;
+
     // window loop
     StrOut("Starting Program Loop...", msgType[0]);
     while (running) {
+
         // poll all events
         while (SDL_PollEvent(&event)) {
             if (event.type == SDL_QUIT) {
@@ -159,11 +162,14 @@ int main() {
         SDL_RenderCopy(renderer, pixelBufferTexture, nullptr, nullptr);
         SDL_RenderPresent(renderer);
         SDL_Delay(25);
+
+        std::cout << i << newline;
+        i += 1;
     }
     StrOut("Closing Program Loop...", msgType[0]);
 
     // clean up memory on app close
-    //delete[] pixelBuffer;
+    delete[] pixelBuffer.data();
     StrOut("Pixel Buffer Deleted", msgType[3]);
 
     SDL_DestroyTexture(pixelBufferTexture);
