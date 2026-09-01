@@ -36,12 +36,32 @@ constexpr int MOVING_RESOLUTION_WIDTH = 240;
 const std::array<std::string, 4> msgType = {"SYSTEM", "ERROR", "SETUP", "WARN"}; // strOut() helpful labels
 
 // global structs
-struct Vec3 {
+struct Vec3 {       // for 3d space
     double x = 0.0;
     double y = 0.0;
     double z = 0.0;
 };
 
+struct Vec2 {       // for 2D space
+    double x = 0.0;
+    double y = 0.0;
+};
+
+struct  Engine {
+
+};
+
+struct BlackHole {
+    Vec2 position;
+    double mass;
+    double radius;
+};
+
+struct Ray {
+    double x; double y;
+    Vec2 direction;
+
+};
 
 int main() {
 
