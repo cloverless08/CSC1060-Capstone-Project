@@ -67,13 +67,6 @@ int main() {
     // variables
     bool running = true;
 
-    int x = 0;
-    int y = 0;
-    int r = 255; // color red
-    int g = 255; // color green
-    int b = 255; // color blue
-    int a = 255; // color alpha (transparency)
-
     StrOut("Local Variables Initialized.", msgType[2]);
 
 
@@ -129,10 +122,7 @@ int main() {
     StrOut("SDL2 Structs Initialized.", msgType[2]);
 
     // create canvas pixel buffer in memory
-    //auto* pixelBuffer = new uint32_t[STANDARD_RESOLUTION_WIDTH * STANDARD_RESOLUTION_HEIGHT] ;
     std::vector<uint32_t> pixelBuffer(STANDARD_RESOLUTION_WIDTH * STANDARD_RESOLUTION_HEIGHT, 0);
-    int bufferStart = y * STANDARD_RESOLUTION_WIDTH + x;
-    pixelBuffer[bufferStart] = (r << 24U) | (g << 16U) | (b << 8U) | a;
     StrOut("Pixel Buffer Initialized.", msgType[2]);
 
 
@@ -193,12 +183,28 @@ int main() {
 
 
         // update pixel buffer
-         for (int py = 200; py < 280; py++) {
-            for (int px = 280; px < 360; px++) {
-                SetPixel(pixelBuffer.data(), STANDARD_RESOLUTION_WIDTH, STANDARD_RESOLUTION_HEIGHT, px, py, r, g, b, a);
-            }
-        }
+         for (int pixelY = 0; pixelY < STANDARD_RESOLUTION_HEIGHT; pixelY++) {
+             for (int pixelX = 0; pixelX< STANDARD_RESOLUTION_WIDTH; pixelX++) {
+                 // normalize pixels into UV coordinates
+                 double u = (double)pixelX / STANDARD_RESOLUTION_WIDTH;
+                 double v = (double)pixelY / STANDARD_RESOLUTION_HEIGHT;
 
+                 Vec2 rayDir = {u,v};
+
+                 double len = std::sqrt(rayDir.x * rayDir.x + rayDir.y * rayDir.y); // simple pythagorean theorem yo
+                 if (len > 0.0001) { // avoids NaN or division by zero at the centerpoint
+                     rayDir.x /= len;
+                     rayDir.y /= len;
+                 }
+
+                 // de-normalize, basically converts back into rgba
+                 int pixelR = (int)((rayDir.x * 0.5 + 0.5) * 255);
+                 int pixelG = (int)((rayDir.y * 0.5 + 0.5) * 255);
+                 int pixelB = 200;
+
+                 SetPixel(pixelBuffer.data(), STANDARD_RESOLUTION_WIDTH, STANDARD_RESOLUTION_HEIGHT, pixelX, pixelY, pixelR, pixelG, pixelB, 255);
+             }
+         }
 
         // update render texture (pixel buffer)
         SDL_UpdateTexture(
