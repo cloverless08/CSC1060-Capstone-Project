@@ -66,11 +66,6 @@ int main() {
 
     // variables
     bool running = true;
-    double camDistance;
-    double camPitch;
-    double camYaw;
-
-    Vec3 ray;
 
     int x = 0;
     int y = 0;
@@ -192,7 +187,7 @@ int main() {
                         break;
                 }
             } else if (event.type == SDL_MOUSEMOTION) {
-                // mouse handling framework
+                // mouse handling framework, if needed later
             }
         }
 
