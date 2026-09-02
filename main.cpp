@@ -196,7 +196,6 @@ int main() {
             }
         }
 
-        //loop variables
 
         // update pixel buffer
          for (int py = 200; py < 280; py++) {
@@ -211,7 +210,7 @@ int main() {
             pixelBufferTexture,
             nullptr,                   // NULL updates the entire texture
             pixelBuffer.data(),            // Pointer to our raw CPU buffer
-            STANDARD_RESOLUTION_WIDTH * sizeof(uint32_t) // Pitch: number of bytes in one row of pixels
+            STANDARD_RESOLUTION_WIDTH * sizeof(uint32_t)
         );
 
         // render loop
