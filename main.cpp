@@ -229,8 +229,6 @@ int main() {
     }
     StrOut("Closing Program Loop...", msgType[0]);
 
-    // clean up memory on app close
-    delete[] pixelBuffer.data();
     StrOut("Pixel Buffer Deleted", msgType[3]);
 
     SDL_DestroyTexture(pixelBufferTexture);
