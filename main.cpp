@@ -156,7 +156,25 @@ int main() {
             if (event.type == SDL_QUIT) {
                 running = false;
             } else if (event.type == SDL_KEYDOWN) {
-                //key presssssss
+                //std::cout << "Key Was Pressed" << std::endl;
+                switch (event.key.keysym.sym) {
+                    case SDLK_ESCAPE:
+                        StrOut("Escape Key Pressed", msgType[0]);
+                        running = false;
+                        break;
+                    case SDLK_RIGHT:
+                        StrOut("Right Arrow Pressed", msgType[0]);
+                        break;
+                    case SDLK_LEFT:
+                        StrOut("Left Arrow Pressed", msgType[0]);
+                        break;
+                    case SDLK_UP:
+                        StrOut("Up Arrow Pressed", msgType[0]);
+                        break;
+                    case SDLK_DOWN:
+                        StrOut("Down Arrow Pressed", msgType[0]);
+                        break;
+                }
             }
         }
 
@@ -184,7 +202,7 @@ int main() {
         SDL_RenderPresent(renderer);
         SDL_Delay(25);
 
-        std::cout << i << newline;
+        //std::cout << i << newline;
         i += 1;
     }
     StrOut("Closing Program Loop...", msgType[0]);
