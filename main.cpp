@@ -155,7 +155,7 @@ int main() {
         while (SDL_PollEvent(&event)) {
             if (event.type == SDL_QUIT) {
                 running = false;
-            } else if (event.type == SDL_KEYDOWN) {
+            } else if (event.type == SDL_KEYUP) {
                 //std::cout << "Key Was Pressed" << std::endl;
                 switch (event.key.keysym.sym) {
                     case SDLK_ESCAPE:
@@ -210,7 +210,7 @@ int main() {
     // clean up memory on app close
     delete[] pixelBuffer.data();
     StrOut("Pixel Buffer Deleted", msgType[3]);
-
+    
     SDL_DestroyTexture(pixelBufferTexture);
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
