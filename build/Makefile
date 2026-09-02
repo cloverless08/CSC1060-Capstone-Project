@@ -129,6 +129,30 @@ CSC1060_CAPTSONE_PROJECT/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CSC1060_CAPTSONE_PROJECT.dir/build.make CMakeFiles/CSC1060_CAPTSONE_PROJECT.dir/build
 .PHONY : CSC1060_CAPTSONE_PROJECT/fast
 
+loop.o: loop.cpp.o
+.PHONY : loop.o
+
+# target to build an object file
+loop.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CSC1060_CAPTSONE_PROJECT.dir/build.make CMakeFiles/CSC1060_CAPTSONE_PROJECT.dir/loop.cpp.o
+.PHONY : loop.cpp.o
+
+loop.i: loop.cpp.i
+.PHONY : loop.i
+
+# target to preprocess a source file
+loop.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CSC1060_CAPTSONE_PROJECT.dir/build.make CMakeFiles/CSC1060_CAPTSONE_PROJECT.dir/loop.cpp.i
+.PHONY : loop.cpp.i
+
+loop.s: loop.cpp.s
+.PHONY : loop.s
+
+# target to generate assembly for a file
+loop.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CSC1060_CAPTSONE_PROJECT.dir/build.make CMakeFiles/CSC1060_CAPTSONE_PROJECT.dir/loop.cpp.s
+.PHONY : loop.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -186,6 +210,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... CSC1060_CAPTSONE_PROJECT"
+	@echo "... loop.o"
+	@echo "... loop.i"
+	@echo "... loop.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
