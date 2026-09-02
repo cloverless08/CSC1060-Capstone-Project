@@ -10,11 +10,20 @@ CPU-Based "ray traced" representation of light rays passing through a black hole
 
 ## Run/Install (Linux or Windows)
 
-This project is cross-platform compatible with Linux and Windows x86.
+This project has cross-platform compatible makefules for Linux and Windows x86.
 
-To install and run, simply download or clone this repository, navigate to ./build and run the application file.
+To install and run, simply download or clone this repository, navigate to ./build and run the linux application file or build from source.
+- **Linux**
 - ./CSC1060_Captstone_Project/build
-- Find ./CSC1060_CAPSTONE_PROJECT(.exe if windows)
+- Find ./CSC1060_CAPSTONE_PROJECT
+- Execute via file manager or terminal
+
+- **Windows**
+- ./CSC_Captstone_Project
+- Run: "cmake -S . -B ./build/"
+- Run: "cd build"
+- Run: "make"
+- Find ./CSC1060_CAPSTONE_PROJECT.exe
 - Execute via file manager or terminal
 
 ***OR***
