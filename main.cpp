@@ -155,7 +155,7 @@ int main() {
         while (SDL_PollEvent(&event)) {
             if (event.type == SDL_QUIT) {
                 running = false;
-            } else if (event.type == SDL_KEYUP) {
+            } else if (event.type == SDL_KEYDOWN) {
                 //std::cout << "Key Was Pressed" << std::endl;
                 switch (event.key.keysym.sym) {
                     case SDLK_ESCAPE:
@@ -173,6 +173,26 @@ int main() {
                         break;
                     case SDLK_DOWN:
                         StrOut("Down Arrow Pressed", msgType[0]);
+                        break;
+                }
+            } else if (event.type == SDL_KEYUP) {
+                //std::cout << "Key Was Pressed" << std::endl;
+                switch (event.key.keysym.sym) {
+                    case SDLK_ESCAPE:
+                        StrOut("Escape Key Released", msgType[0]);
+                        running = false;
+                        break;
+                    case SDLK_RIGHT:
+                        StrOut("Right Arrow Released", msgType[0]);
+                        break;
+                    case SDLK_LEFT:
+                        StrOut("Left Arrow Released", msgType[0]);
+                        break;
+                    case SDLK_UP:
+                        StrOut("Up Arrow Released", msgType[0]);
+                        break;
+                    case SDLK_DOWN:
+                        StrOut("Down Arrow Released", msgType[0]);
                         break;
                 }
             }
@@ -210,7 +230,7 @@ int main() {
     // clean up memory on app close
     delete[] pixelBuffer.data();
     StrOut("Pixel Buffer Deleted", msgType[3]);
-    
+
     SDL_DestroyTexture(pixelBufferTexture);
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
