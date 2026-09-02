@@ -37,9 +37,9 @@ const std::array<std::string, 4> msgType = {"SYSTEM", "ERROR", "SETUP", "WARN"};
 
 // global structs
 struct Vec3 {       // for 3d space
-    double x = 0.0;
-    double y = 0.0;
-    double z = 0.0;
+    double x;
+    double y;
+    double z;
 };
 
 struct Vec2 {       // for 2D space
