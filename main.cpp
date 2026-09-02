@@ -195,6 +195,8 @@ int main() {
                         StrOut("Down Arrow Released", msgType[0]);
                         break;
                 }
+            } else if (event.type == SDL_MOUSEMOTION) {
+                // mouse handling framework
             }
         }
 
