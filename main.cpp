@@ -59,6 +59,7 @@ struct Ray {
 
 };
 
+
 int main() {
 
     TerminalInfoHeader();
@@ -124,6 +125,10 @@ int main() {
     // create canvas pixel buffer in memory
     std::vector<uint32_t> pixelBuffer(STANDARD_RESOLUTION_WIDTH * STANDARD_RESOLUTION_HEIGHT, 0);
     StrOut("Pixel Buffer Initialized.", msgType[2]);
+
+    BlackHole hole;
+    hole.position = {0.0,0.0};
+    hole.radius = 0.25; // UV coordinates
 
 
     unsigned long long i = 0;
