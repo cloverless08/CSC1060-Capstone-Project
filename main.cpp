@@ -14,6 +14,7 @@
 #include <cmath>
 #include <cctype>
 #include "main_utils.h"
+#include "loop.h"
 
 #define RESET   "\033[0m"
 #define RED     "\033[31m"
