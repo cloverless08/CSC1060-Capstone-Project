@@ -14,7 +14,6 @@
 #include <cmath>
 #include <cctype>
 #include "main_utils.h"
-#include "loop.h"
 
 #define RESET   "\033[0m"
 #define RED     "\033[31m"
@@ -37,6 +36,11 @@ struct Vec3 {       // for 3d space
     double x;
     double y;
     double z;
+};
+
+struct Vec2 {       // for 2D space
+    double x = 0.0;
+    double y = 0.0;
 };
 
 class  Engine {
