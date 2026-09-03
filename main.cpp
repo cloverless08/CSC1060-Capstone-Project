@@ -126,7 +126,7 @@ int main() {
     StrOut("Pixel Buffer Initialized.", msgType[2]);
 
 
-    unsigned int i = 0;
+    unsigned long long i = 0;
 
     // window loop
     StrOut("Starting Program Loop...", msgType[0]);
@@ -181,7 +181,6 @@ int main() {
             }
         }
 
-
         // update pixel buffer
          for (int pixelY = 0; pixelY < STANDARD_RESOLUTION_HEIGHT; pixelY++) {
              for (int pixelX = 0; pixelX< STANDARD_RESOLUTION_WIDTH; pixelX++) {
@@ -191,16 +190,16 @@ int main() {
 
                  Vec2 rayDir = {u,v};
 
-                 double len = std::sqrt(rayDir.x * rayDir.x + rayDir.y * rayDir.y); // simple pythagorean theorem yo
-                 if (len > 0.0001) { // avoids NaN or division by zero at the centerpoint
-                     rayDir.x /= len;
-                     rayDir.y /= len;
+                 double length = std::sqrt(rayDir.x * rayDir.x + rayDir.y * rayDir.y); // simple pythagorean theorem yo
+                 if (length > 0.0001) { // avoids NaN or division by zero at the centerpoint
+                     rayDir.x /= length;
+                     rayDir.y /= length;
                  }
 
                  // de-normalize, basically converts back into rgba
                  int pixelR = (int)((rayDir.x * 0.5 + 0.5) * 255);
                  int pixelG = (int)((rayDir.y * 0.5 + 0.5) * 255);
-                 int pixelB = 200;
+                 int pixelB = 255;
 
                  SetPixel(pixelBuffer.data(), STANDARD_RESOLUTION_WIDTH, STANDARD_RESOLUTION_HEIGHT, pixelX, pixelY, pixelR, pixelG, pixelB, 255);
              }

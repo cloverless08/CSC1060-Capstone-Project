@@ -10,7 +10,7 @@ CPU-Based "ray traced" representation of light rays passing through a black hole
 
 ## Run/Install (Linux or Windows)
 
-This project has cross-platform compatible makefules for Linux and Windows x86.
+This project has cross-platform compatible makefiles for Linux and Windows x86.
 
 To install and run, simply download or clone this repository, navigate to ./build and run the linux application file or build from source.
 - **Linux**
