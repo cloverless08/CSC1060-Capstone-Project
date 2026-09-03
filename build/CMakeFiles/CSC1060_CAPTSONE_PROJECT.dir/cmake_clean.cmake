@@ -1,7 +1,5 @@
 file(REMOVE_RECURSE
   "CMakeFiles/CSC1060_CAPTSONE_PROJECT.dir/link.d"
-  "CMakeFiles/CSC1060_CAPTSONE_PROJECT.dir/loop.cpp.o"
-  "CMakeFiles/CSC1060_CAPTSONE_PROJECT.dir/loop.cpp.o.d"
   "CMakeFiles/CSC1060_CAPTSONE_PROJECT.dir/main.cpp.o"
   "CMakeFiles/CSC1060_CAPTSONE_PROJECT.dir/main.cpp.o.d"
   "CMakeFiles/CSC1060_CAPTSONE_PROJECT.dir/main_utils.cpp.o"
