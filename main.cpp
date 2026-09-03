@@ -39,11 +39,6 @@ struct Vec3 {       // for 3d space
     double z;
 };
 
-struct Vec2 {       // for 2D space
-    double x = 0.0;
-    double y = 0.0;
-};
-
 class  Engine {
 
 };
