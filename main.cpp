@@ -43,19 +43,20 @@ struct Vec2 {       // for 2D space
     double y = 0.0;
 };
 
-struct  Engine {
+class  Engine {
 
 };
 
-struct BlackHole {
-    Vec2 position;
-    double mass;
-    double radius;
+class BlackHole {
+    public:
+        Vec2 position;
+        double mass;
+        double radius;
 };
-
-struct Ray {
-    double x; double y;
-    Vec2 direction;
+class Ray {
+    public:
+        double x; double y;
+        Vec2 direction;
 
 };
 
