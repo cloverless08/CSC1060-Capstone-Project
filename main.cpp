@@ -130,8 +130,6 @@ int main() {
     BlackHole hole;
     hole.position = {0.0,0.0};
     hole.radius = 0.25; // UV coordinates
-
-
     unsigned long long i = 0;
 
     // window loop
