@@ -205,7 +205,9 @@ int main() {
                  int pixelG = (int)((rayDir.y * 0.5 + 0.5) * 255);
                  int pixelB = i;
 
-                 SetPixel(pixelBuffer.data(), STANDARD_RESOLUTION_WIDTH, STANDARD_RESOLUTION_HEIGHT, pixelX, pixelY, pixelR, pixelG, pixelB, 255);
+                 SetPixel(pixelBuffer.data(), STANDARD_RESOLUTION_WIDTH, STANDARD_RESOLUTION_HEIGHT,
+                     pixelX, pixelY, pixelR, pixelG, pixelB,
+                     255);
              }
          }
 
