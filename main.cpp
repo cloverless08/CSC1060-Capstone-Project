@@ -137,7 +137,7 @@ int main() {
     BlackHole hole;
     hole.position = {0.0,0.0};
     hole.radius = 0.25; // UV coordinates
-    unsigned long long i = 0;
+    unsigned long long i = 0; // for frame counting ig
 
     // window loop
     StrOut("Starting Program Loop...", msgType[0]);
