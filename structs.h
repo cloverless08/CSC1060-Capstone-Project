@@ -2,6 +2,8 @@
 // Created by cdemin on 9/10/26.
 //
 
+#pragma once
+
 #ifndef CSC1060_CAPSTONE_PROJECT_STRUCTS_H
 #define CSC1060_CAPSTONE_PROJECT_STRUCTS_H
 
