@@ -5,6 +5,8 @@
 //  v0.4.0
 /* ========================================================================== */
 
+#pragma once
+
 #include <SDL2/SDL.h>
 #include <vector>
 #include <iostream>
@@ -106,9 +108,12 @@ int main() {
     std::vector<uint32_t> pixelBuffer(STANDARD_RESOLUTION_WIDTH * STANDARD_RESOLUTION_HEIGHT, 0);
     StrOut("Pixel Buffer Initialized.", msgType[2]);
 
+    /*
     BlackHole hole;
     hole.position = {0.0,0.0};
     hole.radius = 0.25; // UV coordinates
+    */
+
     unsigned long long i = 0; // for frame counting ig
 
     // window loop
@@ -167,7 +172,7 @@ int main() {
         // update pixel buffer
          for (int pixelY = 0; pixelY < STANDARD_RESOLUTION_HEIGHT; pixelY++) {
              for (int pixelX = 0; pixelX< STANDARD_RESOLUTION_WIDTH; pixelX++) {
-                test_loop();
+                //test_loop();
              }
          }
 
