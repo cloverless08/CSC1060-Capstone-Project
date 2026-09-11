@@ -4,11 +4,6 @@
 
 #pragma once
 
-#ifndef CSC1060_CAPSTONE_PROJECT_STRUCTS_H
-#define CSC1060_CAPSTONE_PROJECT_STRUCTS_H
-
-#endif //CSC1060_CAPSTONE_PROJECT_STRUCTS_H
-
 struct Vec3 {       // for 3d space
     double x;
     double y;
