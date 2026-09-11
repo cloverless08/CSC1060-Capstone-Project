@@ -31,6 +31,10 @@ constexpr int MOVING_RESOLUTION_HEIGHT = 320;
 constexpr int MOVING_RESOLUTION_WIDTH = 240;
 const std::array<std::string, 4> msgType = {"SYSTEM", "ERROR", "SETUP", "WARN"}; // strOut() helpful labels
 
+const double G = 6.67 * pow(10, -11); // universal gravitational constant yo
+//const double R_s;
+
+
 // global structs
 struct Vec3 {       // for 3d space
     double x;
@@ -49,7 +53,8 @@ class  Engine {
 
 class BlackHole {
     public:
-        Vec2 position;
+        Vec2 position = {0,0};
+        //Vec3 position = {0.0,0.0,0.0};
         double mass;
         double radius;
 };
@@ -64,6 +69,7 @@ class Ray {
 int main() {
 
     TerminalInfoHeader();
+    std::cout << G << std::endl;
     SDL_Delay(500);
 
     // variables
@@ -84,6 +90,7 @@ int main() {
         return 1;
     }
 
+    // built in event struct intialized as "event" from now on
     SDL_Event event;
 
     StrOut("SDL2 Initialized.", msgType[2]);
@@ -225,7 +232,7 @@ int main() {
         SDL_RenderPresent(renderer);
         SDL_Delay(25);
 
-        //std::cout << i << newline;
+        std::cout << i << newline;
         i += 1;
     }
     StrOut("Closing Program Loop...", msgType[0]);
