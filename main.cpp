@@ -13,7 +13,10 @@
 #include <string>
 #include <cmath>
 #include <cctype>
+
 #include "main_utils.h"
+#include "structs.h"
+#include "loop.h"
 
 #define RESET   "\033[0m"
 #define RED     "\033[31m"
@@ -33,37 +36,6 @@ const std::array<std::string, 4> msgType = {"SYSTEM", "ERROR", "SETUP", "WARN"};
 
 const double G = 6.67 * pow(10, -11); // universal gravitational constant yo
 //const double R_s;
-
-
-// global structs
-struct Vec3 {       // for 3d space
-    double x;
-    double y;
-    double z;
-};
-
-struct Vec2 {       // for 2D space
-    double x = 0.0;
-    double y = 0.0;
-};
-
-class  Engine {
-
-};
-
-class BlackHole {
-    public:
-        Vec2 position = {0,0};
-        //Vec3 position = {0.0,0.0,0.0};
-        double mass;
-        double radius;
-};
-class Ray {
-    public:
-        double x; double y;
-        Vec2 direction;
-
-};
 
 
 int main() {
@@ -195,26 +167,7 @@ int main() {
         // update pixel buffer
          for (int pixelY = 0; pixelY < STANDARD_RESOLUTION_HEIGHT; pixelY++) {
              for (int pixelX = 0; pixelX< STANDARD_RESOLUTION_WIDTH; pixelX++) {
-                 // normalize pixels into UV coordinates
-                 double u = (double)pixelX / STANDARD_RESOLUTION_WIDTH;
-                 double v = (double)pixelY / STANDARD_RESOLUTION_HEIGHT;
-
-                 Vec2 rayDir = {u,v};
-
-                 double length = std::sqrt(rayDir.x * rayDir.x + rayDir.y * rayDir.y); // simple pythagorean theorem yo
-                 if (length > 0.0001) { // avoids NaN or division by zero at the centerpoint
-                     rayDir.x /= length;
-                     rayDir.y /= length;
-                 }
-
-                 // de-normalize, basically converts back into rgba
-                 int pixelR = (int)((rayDir.x * 0.5 + 0.5) * 255);
-                 int pixelG = (int)((rayDir.y * 0.5 + 0.5) * 255);
-                 int pixelB = i;
-
-                 SetPixel(pixelBuffer.data(), STANDARD_RESOLUTION_WIDTH, STANDARD_RESOLUTION_HEIGHT,
-                     pixelX, pixelY, pixelR, pixelG, pixelB,
-                     255);
+                test_loop();
              }
          }
 
