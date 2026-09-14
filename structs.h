@@ -4,19 +4,17 @@
 
 #pragma once
 
-struct Vec3 {       // for 3d space
+class Vec3 {       // for 3d space
+public:
     double x;
     double y;
     double z;
 };
 
-struct Vec2 {       // for 2D space
+class Vec2 {   // for 2D space
+public:
     double x = 0.0;
     double y = 0.0;
-};
-
-class  Engine {
-
 };
 
 class BlackHole {
@@ -33,7 +31,8 @@ public:
 
 };
 
-struct Camera {
+class Camera {
+public:
     double pitch;
     double yaw;
     double distance;
