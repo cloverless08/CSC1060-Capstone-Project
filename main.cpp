@@ -43,7 +43,7 @@ const double G = 6.67 * pow(10, -11); // universal gravitational constant yo
 int main() {
 
     TerminalInfoHeader();
-    //std::cout << G << std::endl;
+    std::cout << G << std::endl;
     SDL_Delay(500);
 
     // variables
