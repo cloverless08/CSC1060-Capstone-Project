@@ -37,7 +37,6 @@ constexpr int MOVING_RESOLUTION_WIDTH = 240;
 const std::array<std::string, 4> msgType = {"SYSTEM", "ERROR", "SETUP", "WARN"}; // strOut() helpful labels
 
 const double G = 6.67 * pow(10, -11); // universal gravitational constant yo
-//const double R_s;
 
 
 int main() {
