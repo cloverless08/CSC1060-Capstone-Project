@@ -139,15 +139,19 @@ int main() {
                         break;
                     case SDLK_RIGHT:
                         StrOut("Right Arrow Pressed", msgType[0]);
+                        cam.yaw += 10;
                         break;
                     case SDLK_LEFT:
                         StrOut("Left Arrow Pressed", msgType[0]);
+                        cam.yaw -= 10;
                         break;
                     case SDLK_UP:
                         StrOut("Up Arrow Pressed", msgType[0]);
+                        cam.pitch += 10;
                         break;
                     case SDLK_DOWN:
                         StrOut("Down Arrow Pressed", msgType[0]);
+                        cam.pitch -= 10;
                         break;
                 }
             } else if (event.type == SDL_KEYUP) {
