@@ -33,3 +33,8 @@ public:
 
 };
 
+struct Camera {
+    double pitch;
+    double yaw;
+    double distance;
+};
