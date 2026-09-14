@@ -28,7 +28,7 @@ int loop() {
     return 0;
 }
 
-int test_loop(std::vector<uint32_t> buffer, int pixelX, int pixelY, int height, int width) { // old loop that draws a gradient as i was learning
+void test_loop(std::vector<uint32_t>& buffer, int pixelX, int pixelY, int height, int width) { // old loop that draws a gradient as i was learning
     // normalize pixels into UV coordinates
     double u = (double)pixelX / height;
     double v = (double)pixelY / width;

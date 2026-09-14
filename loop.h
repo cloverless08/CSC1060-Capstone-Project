@@ -10,4 +10,4 @@
 
 int loop();
 
-int test_loop(std::vector<uint32_t> buffer, int pixelX, int pixelY, int height, int width);
+void test_loop(std::vector<uint32_t>& buffer, int pixelX, int pixelY, int height, int width);
