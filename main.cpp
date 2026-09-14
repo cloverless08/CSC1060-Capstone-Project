@@ -152,7 +152,7 @@ int main() {
                         cam.pitch -= 10.0;
                         break;
                     case SDLK_q:
-                        std::cout << cam.pitch << cam.yaw << std::endl;
+                        std::cout << cam.pitch << " " << cam.yaw << std::endl;
                         break;
                 }
             } else if (event.type == SDL_KEYUP) {
