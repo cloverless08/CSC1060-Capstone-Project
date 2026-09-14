@@ -7,7 +7,7 @@
 #include <SDL2/SDL.h>
 #include <vector>
 #include <iostream>
-//#include <array>
+#include <array>
 #include <random>
 #include <string>
 #include <cmath>
