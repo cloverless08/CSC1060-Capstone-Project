@@ -120,8 +120,6 @@ int main() {
     cam.yaw = 0.0;
 
 
-    unsigned long long i = 0; // for frame counting ig
-
     // window loop
     StrOut("Starting Program Loop...", msgType[0]);
     while (running) {
@@ -200,9 +198,6 @@ int main() {
         SDL_RenderCopy(renderer, pixelBufferTexture, nullptr, nullptr);
         SDL_RenderPresent(renderer);
         SDL_Delay(25);
-
-        std::cout << i << newline;
-        i += 1;
     }
     StrOut("Closing Program Loop...", msgType[0]);
 
