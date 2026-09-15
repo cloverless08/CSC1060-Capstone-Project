@@ -24,23 +24,29 @@
 #define CYAN    "\033[36m"
 #define newline "\n"
 
-/*
 int loop(std::vector<uint32_t>& buffer, BlackHole& hole, Camera& cam, int pixelX, int pixelY, const int height, const int width) {
-    double u = (double)pixelX / height;
-    double v = (double)pixelY / width;
+    // normalize pixels into UV coordinates -1 through 1
+    const double u = static_cast<double>(pixelX) / height;
+    const double v = static_cast<double>(pixelY) / width;
 
-    int holeArea = hole.radius * hole.radius * 3.1415;
+    Vec2 rayDir = {.x = u, .y = v};
 
-    std::vector<int> holepixels;
+    if (double length = std::sqrt(rayDir.x * rayDir.x + rayDir.y * rayDir.y); length > 0.0001) { // avoids NaN or division by zero at the centerpoint
+        rayDir.x /= length;
+        rayDir.y /= length;
+    }
 
+    // de-normalize converts back into rgba
+    int pixelR = static_cast<int>((rayDir.x * 0.5 + 0.5) * 255);
+    int pixelG = static_cast<int>((rayDir.y * 0.5 + 0.5) * 255);
+    //int pixelB = i;
+    int pixelB = 255;
 
     SetPixel(buffer.data(), width, height,
-    pixelX, pixelY, pixelR, pixelG, pixelB,
-    255);
-
-    return 0;
+        pixelX, pixelY, pixelR, pixelG, pixelB,
+        255);
 }
-*/
+
 
 void test_loop(std::vector<uint32_t>& buffer, int pixelX, int pixelY, const int height, const int width) { // old loop that draws a gradient as i was learning
     // normalize pixels into UV coordinates -1 through 1
