@@ -67,7 +67,6 @@ int main() {
 
     // built in event struct intialized as "event" from now on
     SDL_Event event;
-
     StrOut("SDL2 Initialized.", msgType[2]);
 
 
@@ -120,7 +119,7 @@ int main() {
     while (running) {
 
         // poll all events
-        std::thread inputThread(GetKeyPress(event, running, cam));
+        std::thread inputThread(GetKeyPress,std::ref(event), std::ref(running), std::ref(cam));
 
        
         // update pixel buffer
