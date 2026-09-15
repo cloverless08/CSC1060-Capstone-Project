@@ -185,8 +185,6 @@ int main() {
                 test_loop(pixelBuffer, pixelX, pixelY, STANDARD_RESOLUTION_HEIGHT, STANDARD_RESOLUTION_WIDTH);
              }
          }
-        SetPixel(pixelBuffer.data(), STANDARD_RESOLUTION_WIDTH, STANDARD_RESOLUTION_HEIGHT, 0, 0, 0, 0, 0);
-        SetPixel(pixelBuffer.data(), STANDARD_RESOLUTION_WIDTH, STANDARD_RESOLUTION_HEIGHT, 1, 1, 255, 255, 255);
 
 
         // update render texture (pixel buffer)
@@ -201,7 +199,7 @@ int main() {
         SDL_RenderClear(renderer);
         SDL_RenderCopy(renderer, pixelBufferTexture, nullptr, nullptr);
         SDL_RenderPresent(renderer);
-        SDL_Delay(25);
+        SDL_Delay(100);
     }
     StrOut("Closing Program Loop...", msgType[0]);
 

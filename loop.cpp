@@ -25,11 +25,11 @@
 #define newline "\n"
 
 int loop(std::vector<uint32_t>& buffer, BlackHole& hole, Camera& cam, int pixelX, int pixelY, const int height, const int width) { // loop for pixel color assignments
-    // normalize pixels into UV coordinates -1 through 1
-    const double u = static_cast<double>(pixelX) / height;
-    const double v = static_cast<double>(pixelY) / width;
+    // normalize pixels into UV coordinates 0 through 1
+    const double xCentered = static_cast<double>((2 * pixelX - width) / height);
+    const double yCentered = static_cast<double>((2 * pixelY - height) / height);
 
-    Vec2 rayDir = {.x = u, .y = v};
+    Vec2 rayDir = {.x = xCentered, .y = yCentered};
 
     if (double length = std::sqrt(rayDir.x * rayDir.x + rayDir.y * rayDir.y); length > 0.0001) { // avoids NaN or division by zero at the centerpoint
         rayDir.x /= length;
@@ -49,7 +49,7 @@ int loop(std::vector<uint32_t>& buffer, BlackHole& hole, Camera& cam, int pixelX
 
 
 void test_loop(std::vector<uint32_t>& buffer, int pixelX, int pixelY, const int height, const int width) { // old loop that draws a gradient as i was learning
-    // normalize pixels into UV coordinates -1 through 1
+    // normalize pixels into UV coordinates 0 sthrough 1
     const double u = static_cast<double>(pixelX) / height;
     const double v = static_cast<double>(pixelY) / width;
 
