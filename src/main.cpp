@@ -120,6 +120,7 @@ int main() {
 
         // poll all events
         std::thread inputThread(GetKeyPress,std::ref(event), std::ref(running), std::ref(cam));
+        inputThread.detach();
 
        
         // update pixel buffer
