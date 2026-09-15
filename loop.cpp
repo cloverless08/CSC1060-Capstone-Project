@@ -24,14 +24,23 @@
 #define CYAN    "\033[36m"
 #define newline "\n"
 
+/*
 int loop(std::vector<uint32_t>& buffer, BlackHole& hole, Camera& cam, int pixelX, int pixelY, const int height, const int width) {
     double u = (double)pixelX / height;
     double v = (double)pixelY / width;
 
+    int holeArea = hole.radius * hole.radius * 3.1415;
 
+    std::vector<int> holepixels;
+
+
+    SetPixel(buffer.data(), width, height,
+    pixelX, pixelY, pixelR, pixelG, pixelB,
+    255);
 
     return 0;
 }
+*/
 
 void test_loop(std::vector<uint32_t>& buffer, int pixelX, int pixelY, const int height, const int width) { // old loop that draws a gradient as i was learning
     // normalize pixels into UV coordinates -1 through 1

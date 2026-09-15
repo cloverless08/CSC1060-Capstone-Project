@@ -109,7 +109,6 @@ int main() {
     StrOut("Pixel Buffer Initialized.", msgType[2]);
 
 
-    // create custom structs needed
     BlackHole hole;
     hole.position = {0.0,0.0};
     hole.radius = 0.25; // UV coordinates
