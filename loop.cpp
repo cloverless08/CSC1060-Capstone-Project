@@ -33,17 +33,21 @@ int loop(std::vector<uint32_t>& buffer, BlackHole hole, int pixelX, int pixelY, 
     // normalize pixels into UV coordinates 0 through 1
     const double xCentered = static_cast<double>((2 * pixelX - width) / height);
     const double yCentered = static_cast<double>((2 * pixelY - height) / height);
+    StrOut("static cast done");
 
     int pixelR;
     int pixelG;
     int pixelB;
     int pixelA;
+    StrOut("ints");
 
     Vec2 rayDir = {.x = xCentered, .y = yCentered};
+    StrOut("vecs");
 
     double length = std::sqrt(rayDir.x * rayDir.x + rayDir.y * rayDir.y); length > 0.0001; // avoids NaN or division by zero at the centerpoint
     rayDir.x /= length;
     rayDir.y /= length;
+    StrOut("length);
 
     if (length <= hole.radius) {
         // pixel is withing black hole radius
@@ -56,10 +60,12 @@ int loop(std::vector<uint32_t>& buffer, BlackHole hole, int pixelX, int pixelY, 
         pixelG = 255;
         pixelB = 255;
     }
+    StrOut("set rgba");
 
     SetPixel(buffer.data(), width, height,
         pixelX, pixelY, pixelR, pixelG, pixelB,
         255);
+        StrOut("setpixel");
 }
 
 
