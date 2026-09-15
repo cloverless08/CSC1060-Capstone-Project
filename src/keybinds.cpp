@@ -8,13 +8,14 @@
 #include <iostream>
 #include <ostream>
 #include <array>
+#include <bits/std_thread.h>
 
 #include "main_utils.h"
 #include "structs.h"
 
 #include <SDL2/SDL.h>
 
-void GetKeyPress(SDL_Event& event, bool& running, Camera& cam) {
+std::thread GetKeyPress(SDL_Event &event, bool &running, Camera &cam) {
 
 
     const std::array<std::string, 4> msgType = {"SYSTEM", "ERROR", "SETUP", "WARN"}; // strOut() helpful labels
