@@ -1,9 +1,9 @@
 
 # CSC1060 Capstone - Black Hole Sim
 
-A (kind of) real-time visual simulation of a Black Hole. Doppler Effect, Gravitational Lensing, Accretion Disk, and Halo.
+A (hopefully) real-time visual simulation of a Black Hole. Doppler Effect, Gravitational Lensing, Accretion Disk, and Halo.
 
-CPU-Based "ray traced" representation of light rays passing through a black hole in space.
+CPU traced representation of light rays passing through a black hole in space.
  - C++ Calculates light rays, star position and black hole effects
  - Each pixel gets an RBG value in a pixel buffer
  - SDL2 renders pixel buffer to screen using GPU
@@ -19,12 +19,7 @@ To install and run, simply download or clone this repository, navigate to ./buil
 - Execute via file manager or terminal
 
 - **Windows**
-- ./CSC_Captstone_Project
-- Run: "cmake -S . -B ./build/"
-- Run: "cd build"
-- Run: "make"
-- Find ./CSC1060_CAPSTONE_PROJECT.exe
-- Execute via file manager or terminal
+- to come ig
 
 ***OR***
 
