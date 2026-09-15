@@ -113,7 +113,7 @@ int main() {
     hole.position = {0.0,0.0};
     hole.radius = 0.25; // UV coordinates
 
-    Camera cam;
+    Camera cam{};
     cam.pitch = 0.0;
     cam.yaw = 0.0;
 
