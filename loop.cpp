@@ -35,12 +35,12 @@ void loop(std::vector<uint32_t>& buffer, BlackHole& hole, int pixelX, int pixelY
     const double yCentered = static_cast<double>((2.0 * pixelY - height) / height);
 
 
-    int pixelR;
-    int pixelG;
-    int pixelB;
+    int pixelR = 255;
+    int pixelG = 255;
+    int pixelB = 255;
     int pixelA = 255;
 
-    Vec2 rayDir = {.x = xCentered, .y = yCentered};
+    Vec2 rayDir = {rayDir.x = xCentered, rayDir.y = yCentered};
 
     double length = std::sqrt(rayDir.x * rayDir.x + rayDir.y * rayDir.y);
 
@@ -49,7 +49,7 @@ void loop(std::vector<uint32_t>& buffer, BlackHole& hole, int pixelX, int pixelY
         pixelR = 0;
         pixelG = 0;
         pixelB = 0;
-    } else {
+    } else if (length > hole.radius) {
         // pixel is outside radius, render background
         pixelR = 255;
         pixelG = 255;
