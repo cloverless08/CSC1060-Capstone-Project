@@ -109,13 +109,8 @@ int main() {
     StrOut("Pixel Buffer Initialized.", msgType[2]);
 
 
-    BlackHole hole;
-    hole.position = {0.0,0.0};
-    hole.radius = 0.25; // UV coordinates
-
-    Camera cam{};
-    cam.pitch = 0.0;
-    cam.yaw = 0.0;
+    BlackHole hole = {0.0, 0.0, 0.25};
+    Camera cam = {0.0, 0.0};
 
 
     // window loop
@@ -182,7 +177,7 @@ int main() {
         // update pixel buffer
          for (int pixelY = 0; pixelY < STANDARD_RESOLUTION_HEIGHT; pixelY++) {
              for (int pixelX = 0; pixelX< STANDARD_RESOLUTION_WIDTH; pixelX++) {
-                test_loop(pixelBuffer, pixelX, pixelY, STANDARD_RESOLUTION_HEIGHT, STANDARD_RESOLUTION_WIDTH);
+                loop(pixelBuffer, hole, pixelX, pixelY, STANDARD_RESOLUTION_HEIGHT, STANDARD_RESOLUTION_WIDTH);
              }
          }
 
