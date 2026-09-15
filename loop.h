@@ -8,6 +8,6 @@
 #include <vector>
 #include "structs.h"
 
-int loop(std::vector<uint32_t>& buffer, BlackHole hole, int pixelX, int pixelY, const int height, const int width);
+void loop(std::vector<uint32_t>& buffer, BlackHole& hole, int pixelX, int pixelY, const int height, const int width);
 
 void test_loop(std::vector<uint32_t>& buffer, int pixelX, int pixelY, int height, int width);

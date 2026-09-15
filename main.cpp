@@ -194,7 +194,7 @@ int main() {
         SDL_RenderClear(renderer);
         SDL_RenderCopy(renderer, pixelBufferTexture, nullptr, nullptr);
         SDL_RenderPresent(renderer);
-        SDL_Delay(100);
+        SDL_Delay(25);
     }
     StrOut("Closing Program Loop...", msgType[0]);
 

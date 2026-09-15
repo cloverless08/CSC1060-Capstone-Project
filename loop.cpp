@@ -24,27 +24,25 @@
 #define CYAN    "\033[36m"
 #define newline "\n"
 
-int loop(std::vector<uint32_t>& buffer, BlackHole hole, int pixelX, int pixelY, const int height, const int width) { // loop for pixel color assignments
+void loop(std::vector<uint32_t>& buffer, BlackHole& hole, int pixelX, int pixelY, const int height, const int width) { // loop for pixel color assignments
 
     std::cout << buffer.data() << std::endl;
     std::cout << hole.radius << std::endl;
     std::cout << hole.mass << std::endl;
 
     // normalize pixels into UV coordinates 0 through 1
-    const double xCentered = static_cast<double>((2 * pixelX - width) / height);
-    const double yCentered = static_cast<double>((2 * pixelY - height) / height);
+    const double xCentered = static_cast<double>((2.0 * pixelX - width) / height);
+    const double yCentered = static_cast<double>((2.0 * pixelY - height) / height);
 
 
     int pixelR;
     int pixelG;
     int pixelB;
-    int pixelA;
+    int pixelA = 255;
 
     Vec2 rayDir = {.x = xCentered, .y = yCentered};
 
-    double length = std::sqrt(rayDir.x * rayDir.x + rayDir.y * rayDir.y); length > 0.0001; // avoids NaN or division by zero at the centerpoint
-    rayDir.x /= length;
-    rayDir.y /= length;
+    double length = std::sqrt(rayDir.x * rayDir.x + rayDir.y * rayDir.y);
 
     if (length <= hole.radius) {
         // pixel is withing black hole radius
@@ -57,6 +55,7 @@ int loop(std::vector<uint32_t>& buffer, BlackHole hole, int pixelX, int pixelY, 
         pixelG = 255;
         pixelB = 255;
     }
+
 
     SetPixel(buffer.data(), width, height,
         pixelX, pixelY, pixelR, pixelG, pixelB,
@@ -76,7 +75,7 @@ void test_loop(std::vector<uint32_t>& buffer, int pixelX, int pixelY, const int 
         rayDir.y /= length;
     }
 
-    // de-normalize converts back into rgba
+    // convert back to rgba
     int pixelR = static_cast<int>((rayDir.x * 0.5 + 0.5) * 255);
     int pixelG = static_cast<int>((rayDir.y * 0.5 + 0.5) * 255);
     //int pixelB = i;
