@@ -182,9 +182,12 @@ int main() {
         // update pixel buffer
          for (int pixelY = 0; pixelY < STANDARD_RESOLUTION_HEIGHT; pixelY++) {
              for (int pixelX = 0; pixelX< STANDARD_RESOLUTION_WIDTH; pixelX++) {
-                loop(pixelBuffer, hole, cam, pixelX, pixelY, STANDARD_RESOLUTION_HEIGHT, STANDARD_RESOLUTION_WIDTH);
+                test_loop(pixelBuffer, pixelX, pixelY, STANDARD_RESOLUTION_HEIGHT, STANDARD_RESOLUTION_WIDTH);
              }
          }
+        SetPixel(pixelBuffer.data(), STANDARD_RESOLUTION_WIDTH, STANDARD_RESOLUTION_HEIGHT, 0, 0, 0, 0, 0);
+        SetPixel(pixelBuffer.data(), STANDARD_RESOLUTION_WIDTH, STANDARD_RESOLUTION_HEIGHT, 1, 1, 255, 255, 255);
+
 
         // update render texture (pixel buffer)
         SDL_UpdateTexture(

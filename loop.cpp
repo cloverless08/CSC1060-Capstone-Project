@@ -24,7 +24,7 @@
 #define CYAN    "\033[36m"
 #define newline "\n"
 
-int loop(std::vector<uint32_t>& buffer, BlackHole& hole, Camera& cam, int pixelX, int pixelY, const int height, const int width) {
+int loop(std::vector<uint32_t>& buffer, BlackHole& hole, Camera& cam, int pixelX, int pixelY, const int height, const int width) { // loop for pixel color assignments
     // normalize pixels into UV coordinates -1 through 1
     const double u = static_cast<double>(pixelX) / height;
     const double v = static_cast<double>(pixelY) / width;
