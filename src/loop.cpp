@@ -2,8 +2,6 @@
 // Created by cdemin on 9/10/26.
 //
 
-#include "loop.h"
-
 #include <SDL2/SDL.h>
 #include <vector>
 #include <iostream>
@@ -12,8 +10,10 @@
 #include <string>
 #include <cmath>
 #include <cctype>
-#include "main_utils.h"
-#include "structs.h"
+
+#include "../include/main_utils.h"
+#include "../include/structs.h"
+#include "../include/loop.h"
 
 #define RESET   "\033[0m"
 #define RED     "\033[31m"
