@@ -4,9 +4,6 @@
 //  Capstone Project
 //  v0.4.0
 /* ========================================================================== */
-
-#pragma once
-
 #include <SDL2/SDL.h>
 #include <vector>
 #include <iostream>

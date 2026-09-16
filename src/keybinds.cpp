@@ -2,8 +2,6 @@
 // Created by cdemin on 9/15/26.
 //
 
-#pragma once
-
 #include <iostream>
 #include <ostream>
 #include <array>
