@@ -5,11 +5,7 @@
 #include <SDL2/SDL.h>
 #include <vector>
 #include <iostream>
-#include <array>
-#include <random>
-#include <string>
 #include <cmath>
-#include <cctype>
 
 #include "../include/main_utils.h"
 #include "../include/structs.h"

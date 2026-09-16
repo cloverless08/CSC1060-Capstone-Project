@@ -8,7 +8,6 @@
 #include <iostream>
 #include <ostream>
 #include <array>
-#include <bits/std_thread.h>
 
 #include "main_utils.h"
 #include "structs.h"
