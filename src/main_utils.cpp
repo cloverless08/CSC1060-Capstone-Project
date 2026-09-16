@@ -63,3 +63,7 @@ void TerminalInfoHeader() {
     std::cout << GREEN;
     std::cout << newline;
 }
+
+void DiagnoseProgram() {
+
+}

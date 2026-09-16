@@ -109,7 +109,7 @@ int main() {
 
 
     BlackHole hole = {0.0, 0.0, 100, 0.25};
-    Camera cam = {0.0, 0.0};
+    Camera cam = {0, 0};
 
 
     // window loop

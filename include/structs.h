@@ -33,7 +33,7 @@ public:
 
 class Camera {
 public:
-    double pitch;
-    double yaw;
-    double distance;
+    int pitch;
+    int yaw;
+    int distance;
 };

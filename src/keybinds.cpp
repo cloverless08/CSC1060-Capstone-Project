@@ -4,10 +4,10 @@
 
 #pragma once
 
-
 #include <iostream>
 #include <ostream>
 #include <array>
+#include <thread>
 
 #include "main_utils.h"
 #include "structs.h"
@@ -32,23 +32,28 @@ void GetKeyPress(SDL_Event &event, bool &running, Camera &cam) {
                         break;
                     case SDLK_RIGHT:
                         StrOut("Right Arrow Pressed", msgType[0]);
-                        cam.yaw += 10.0;
+                        cam.yaw = (cam.yaw % 361) + 10;
                         break;
                     case SDLK_LEFT:
                         StrOut("Left Arrow Pressed", msgType[0]);
-                        cam.yaw -= 10.0;
+                        cam.yaw = (cam.yaw % 361) - 10;
                         break;
                     case SDLK_UP:
                         StrOut("Up Arrow Pressed", msgType[0]);
-                        cam.pitch += 10.0;
+                        cam.pitch = (cam.pitch % 361) + 10;
                         break;
                     case SDLK_DOWN:
                         StrOut("Down Arrow Pressed", msgType[0]);
-                        cam.pitch -= 10.0;
+                        cam.pitch = (cam.pitch % 361) - 10;
                         break;
                     case SDLK_q:
+                        StrOut("Q: Camera Position", msgType[0]);
                         std::cout << cam.pitch << " " << cam.yaw << std::endl;
                         break;
+                    case SDLK_d:
+                        StrOut("D: Diagnostics", msgType[0]);
+                        std::thread diagnosticThread(DiagnoseProgram);
+                        diagnosticThread.join();
                 }
             } else if (event.type == SDL_KEYUP) {
                 //std::cout << "Key Was Pressed" << std::endl;
