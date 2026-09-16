@@ -10,7 +10,6 @@
 #include <array>
 #include <string>
 #include <cmath>
-#include <thread>
 
 #include "main_utils.h"
 #include "structs.h"
@@ -114,8 +113,7 @@ int main() {
     while (running) {
 
         // poll all events
-        std::thread inputThread(GetKeyPress,std::ref(event), std::ref(running), std::ref(cam));
-        inputThread.detach();
+        GetKeyPress(event, running, cam);
 
        
         // update pixel buffer
