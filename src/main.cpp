@@ -4,6 +4,7 @@
 //  Capstone Project
 //  v0.4.0
 /* ========================================================================== */
+
 #include <SDL2/SDL.h>
 #include <vector>
 #include <iostream>
@@ -47,7 +48,7 @@ int main() {
     StrOut("Local Variables Initialized.", msgType[2]);
 
 
-    //intial warnings and output
+    // intial warnings and output
     StrOut("CSC1060 - Capstone Project", "info");
     StrOut("By Carrick De Min, Fall 2026", "info");
     StrOut("This program is under development and may not function as expected.", msgType[3]);
