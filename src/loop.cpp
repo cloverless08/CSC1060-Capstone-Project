@@ -6,6 +6,7 @@
 #include <vector>
 #include <iostream>
 #include <cmath>
+#include <array>
 
 #include "../include/main_utils.h"
 #include "../include/structs.h"
@@ -20,7 +21,7 @@
 #define CYAN    "\033[36m"
 #define newline "\n"
 
-void loop(std::vector<uint32_t>& buffer, BlackHole& hole, int pixelX, int pixelY, const int height, const int width) { // loop for pixel color assignments
+void loop(std::vector<uint32_t>& buffer, BlackHole& hole, int pixelX, int pixelY, const int height, const int width, std::array<int, 4> backgroundColor) { // loop for pixel color assignments
     /*
     std::cout << buffer.data() << std::endl;
     std::cout << hole.radius << std::endl;
@@ -30,7 +31,6 @@ void loop(std::vector<uint32_t>& buffer, BlackHole& hole, int pixelX, int pixelY
     // normalize pixels into UV coordinates 0 through 1
     const double xCentered = static_cast<double>((2.0 * pixelX - width) / height);
     const double yCentered = static_cast<double>((2.0 * pixelY - height) / height);
-
 
     int pixelR = 255;
     int pixelG = 255;
