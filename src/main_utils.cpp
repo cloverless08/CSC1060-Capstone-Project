@@ -67,3 +67,12 @@ void TerminalInfoHeader() {
 void DiagnoseProgram() {
 
 }
+
+std::string GetColor(int r,int g, int b,int a) {
+    if (!r || !g || !b || !a) {
+        return "bro thats not a color";
+    } else {
+        // color value provided
+
+    }
+}
