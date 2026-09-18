@@ -9,7 +9,15 @@
 #include "structs.h"
 
 void loop2D(std::vector<uint32_t>& buffer,
-    BlackHole& hole, int pixelX, int pixelY,
+    BlackHole& hole,
+    int pixelX, int pixelY,
+    const int height, const int width,
+    std::array<int,
+    4> backgroundColor);
+
+void loop3D(std::vector<uint32_t>& buffer,
+    BlackHole& hole,
+    int pixelX, int pixelY,
     const int height, const int width,
     std::array<int,
     4> backgroundColor);
