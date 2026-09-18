@@ -8,7 +8,7 @@
 #include <vector>
 #include "structs.h"
 
-void loop(std::vector<uint32_t>& buffer,
+void loop2D(std::vector<uint32_t>& buffer,
     BlackHole& hole, int pixelX, int pixelY,
     const int height, const int width,
     std::array<int,

@@ -21,12 +21,7 @@
 #define CYAN    "\033[36m"
 #define newline "\n"
 
-void loop(std::vector<uint32_t>& buffer, BlackHole& hole, int pixelX, int pixelY, const int height, const int width, std::array<int, 4> backgroundColor) { // loop for pixel color assignments
-    /*
-    std::cout << buffer.data() << std::endl;
-    std::cout << hole.radius << std::endl;
-    std::cout << hole.mass << std::endl;
-    */
+void loop2D(std::vector<uint32_t>& buffer, BlackHole& hole, int pixelX, int pixelY, const int height, const int width, std::array<int, 4> backgroundColor) { // loop for pixel color assignments
 
     // normalize pixels into UV coordinates 0 through 1
     const double xCentered = static_cast<double>((2.0 * pixelX - width) / height);
