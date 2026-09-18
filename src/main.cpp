@@ -32,7 +32,7 @@ constexpr int STANDARD_RESOLUTION_HEIGHT = 480;
 constexpr int MOVING_RESOLUTION_HEIGHT = 320;
 constexpr int MOVING_RESOLUTION_WIDTH = 240;
 const std::array<std::string, 4> msgType = {"SYSTEM", "ERROR", "SETUP", "WARN"}; // strOut() helpful labels
-const std::array<int, 4> backgroundColor = {255, 255, 255, 255};
+const std::array<int, 4> BACKGROUND_COLOR = {255, 255, 255, 255};
 
 const double G = 6.67 * pow(10, -11); // universal gravitational constant yo
 
@@ -41,7 +41,7 @@ int main() {
 
     TerminalInfoHeader();
     std::cout << G << std::endl;
-    std::cout << backgroundColor[0] << backgroundColor[1] << backgroundColor[2] << backgroundColor[3] << std::endl;
+    std::cout << BACKGROUND_COLOR[0] << BACKGROUND_COLOR[1] << BACKGROUND_COLOR[2] << BACKGROUND_COLOR[3] << std::endl;
     SDL_Delay(500);
 
     // variables
@@ -122,7 +122,7 @@ int main() {
         // update pixel buffer
          for (int pixelY = 0; pixelY < STANDARD_RESOLUTION_HEIGHT; pixelY++) {
              for (int pixelX = 0; pixelX< STANDARD_RESOLUTION_WIDTH; pixelX++) {
-                loop(pixelBuffer, hole, pixelX, pixelY, STANDARD_RESOLUTION_HEIGHT, STANDARD_RESOLUTION_WIDTH);
+                loop(pixelBuffer, hole, pixelX, pixelY, STANDARD_RESOLUTION_HEIGHT, STANDARD_RESOLUTION_WIDTH, BACKGROUND_COLOR);
              }
          }
 

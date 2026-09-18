@@ -52,6 +52,7 @@ void GetKeyPress(SDL_Event &event, bool &running, Camera &cam) {
                         StrOut("D: Diagnostics", msgType[0]);
                         std::thread diagnosticThread(DiagnoseProgram);
                         diagnosticThread.join();
+                        break;
                 }
             } else if (event.type == SDL_KEYUP) {
                 //std::cout << "Key Was Pressed" << std::endl;
