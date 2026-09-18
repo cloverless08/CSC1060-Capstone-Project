@@ -30,7 +30,7 @@ void loop2D(std::vector<uint32_t>& buffer, BlackHole& hole, int pixelX, int pixe
     int pixelR = 255;
     int pixelG = 255;
     int pixelB = 255;
-    int pixelA = 255;
+    const int pixelA = 255;
 
     Vec2 rayDir = {rayDir.x = xCentered, rayDir.y = yCentered};
 
@@ -62,7 +62,7 @@ void loop3D(std::vector<uint32_t>& buffer, BlackHole& hole, int pixelX, int pixe
     int pixelR = 255;
     int pixelG = 255;
     int pixelB = 255;
-    int pixelA = 255;
+    const int pixelA = 255;
 
     Vec3 ray{.x=0, .y=0, .z=0};
 
