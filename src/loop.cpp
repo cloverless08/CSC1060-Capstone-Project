@@ -48,12 +48,28 @@ void loop2D(std::vector<uint32_t>& buffer, BlackHole& hole, int pixelX, int pixe
         pixelB = 255;
     }
 
-
     SetPixel(buffer.data(), width, height,
         pixelX, pixelY, pixelR, pixelG, pixelB,
         255);
 }
 
+void loop3D(std::vector<uint32_t>& buffer, BlackHole& hole, int pixelX, int pixelY, const int height, const int width, std::array<int, 4> backgroundColor) {
+
+    // normalize pixels into UV coordinates 0 through 1
+    const double xCentered = static_cast<double>((2.0 * pixelX - width) / height);
+    const double yCentered = static_cast<double>((2.0 * pixelY - height) / height);
+
+    int pixelR = 255;
+    int pixelG = 255;
+    int pixelB = 255;
+    int pixelA = 255;
+
+    Vec3 ray{.x=0, .y=0, .z=0};
+
+    SetPixel(buffer.data(), width, height,
+    pixelX, pixelY, pixelR, pixelG, pixelB,
+    255);
+}
 
 void test_loop(std::vector<uint32_t>& buffer, int pixelX, int pixelY, const int height, const int width) { // old loop that draws a gradient as i was learning
     // normalize pixels into UV coordinates 0 sthrough 1
