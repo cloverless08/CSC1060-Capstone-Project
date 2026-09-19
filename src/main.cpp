@@ -11,6 +11,7 @@
 #include <array>
 #include <string>
 #include <cmath>
+#include <cstdint>
 
 #include "main_utils.h"
 #include "structs.h"
@@ -41,12 +42,18 @@ const unsigned int seedStarField =
         (generateSeed(0, 255) * 1000000) +
             (generateSeed(0, 255) * 1000) +
                 generateSeed(0, 255);
+const unsigned int seedTest =
+    (82 * 1000000000) +
+        (122 * 1000000) +
+            (203 * 1000) +
+                87;
 
 
 int main() {
 
     TerminalInfoHeader();
     std::cout << seedStarField << std::endl;
+    std::cout << seedTest << std::endl;
     SDL_Delay(500);
 
     // variables
