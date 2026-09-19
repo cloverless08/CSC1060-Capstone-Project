@@ -37,7 +37,7 @@ const std::array<std::string, 4> msgType = {"SYSTEM", "ERROR", "SETUP", "WARN"};
 const std::array<int, 4> BACKGROUND_COLOR = {0, 0, 0, 0};
 const double G = 6.67 * pow(10, -11); // universal gravitational constant yo
 
-const uint64_t seedStarField =
+const uint64_t seedStarField = // desire to pack a seed with the following parsed values to be inferred: PPPrrrRRRgggGGGbbbBBB
     (randomUint64(0, 100) * 1000000000ULL) +
     (randomUint64(0, 255) * 1000000ULL) +
     (randomUint64(0, 255) * 1000ULL) +
