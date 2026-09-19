@@ -55,13 +55,13 @@ void loop2D(std::vector<uint32_t>& buffer, BlackHole& hole, int pixelX, int pixe
 
 void loop3D(std::vector<uint32_t>& buffer,
     BlackHole& hole,
-    int pixelX, int pixelY,
+    int xPixel, int yPixel,
     const int height, const int width,
     std::array<int, 4> backgroundColor) {
 
     // normalize pixels into UV coordinates 0 through 1
-    const double xCentered = static_cast<double>((2.0 * pixelX - width) / height);
-    const double yCentered = static_cast<double>((2.0 * pixelY - height) / height);
+    const double xPixelCentered = static_cast<double>((2.0 * xPixel - width) / height);
+    const double yPixelCentered = static_cast<double>((2.0 * yPixel - height) / height);
 
     int pixelR = backgroundColor[0];
     int pixelG = backgroundColor[1];
@@ -76,7 +76,7 @@ void loop3D(std::vector<uint32_t>& buffer,
     Vec3 ray;
 
     SetPixel(buffer.data(), width, height,
-    pixelX, pixelY, pixelR, pixelG, pixelB,
+    xPixel, yPixel, pixelR, pixelG, pixelB,
     255);
 }
 
