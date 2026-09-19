@@ -19,8 +19,7 @@ public:
 
 class BlackHole {
 public:
-    Vec2 position = {0,0};
-    //Vec3 position = {0.0,0.0,0.0};
+    Vec3 position = {0.0,0.0,0.0};
     double mass;
     double radius;
 };
