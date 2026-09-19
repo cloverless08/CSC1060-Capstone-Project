@@ -33,7 +33,7 @@ constexpr int MOVING_RESOLUTION_HEIGHT = 320;
 constexpr int MOVING_RESOLUTION_WIDTH = 240;
 
 const std::array<std::string, 4> msgType = {"SYSTEM", "ERROR", "SETUP", "WARN"}; // strOut() helpful labels
-const std::array<int, 4> BACKGROUND_COLOR = {255, 255, 255, 255};
+const std::array<int, 4> BACKGROUND_COLOR = {0, 0, 0, 0};
 
 const double G = 6.67 * pow(10, -11); // universal gravitational constant yo
 

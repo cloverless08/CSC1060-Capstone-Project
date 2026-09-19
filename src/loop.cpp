@@ -66,8 +66,6 @@ void loop3D(std::vector<uint32_t>& buffer, BlackHole& hole, int pixelX, int pixe
 
     Vec3 ray{.x=0.0, .y=0.0, .z=0.0};
 
-    std::cout << hole.mass << " " << hole.radius << std::endl;
-
     SetPixel(buffer.data(), width, height,
     pixelX, pixelY, pixelR, pixelG, pixelB,
     255);
