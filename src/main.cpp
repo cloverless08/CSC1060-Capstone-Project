@@ -31,6 +31,7 @@ constexpr int STANDARD_RESOLUTION_WIDTH = 640;
 constexpr int STANDARD_RESOLUTION_HEIGHT = 480;
 constexpr int MOVING_RESOLUTION_HEIGHT = 320;
 constexpr int MOVING_RESOLUTION_WIDTH = 240;
+
 const std::array<std::string, 4> msgType = {"SYSTEM", "ERROR", "SETUP", "WARN"}; // strOut() helpful labels
 const std::array<int, 4> BACKGROUND_COLOR = {255, 255, 255, 255};
 
