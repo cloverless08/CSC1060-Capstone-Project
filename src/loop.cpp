@@ -53,7 +53,11 @@ void loop2D(std::vector<uint32_t>& buffer, BlackHole& hole, int pixelX, int pixe
         255);
 }
 
-void loop3D(std::vector<uint32_t>& buffer, BlackHole& hole, int pixelX, int pixelY, const int height, const int width, std::array<int, 4> backgroundColor) {
+void loop3D(std::vector<uint32_t>& buffer,
+    BlackHole& hole,
+    int pixelX, int pixelY,
+    const int height, const int width,
+    std::array<int, 4> backgroundColor) {
 
     // normalize pixels into UV coordinates 0 through 1
     const double xCentered = static_cast<double>((2.0 * pixelX - width) / height);
