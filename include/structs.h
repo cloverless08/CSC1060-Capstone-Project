@@ -6,9 +6,9 @@
 
 class Vec3 {       // for 3d space
 public:
-    double x;
-    double y;
-    double z;
+    double x = 0.0;
+    double y = 0.0;
+    double z = 0.0;
 };
 
 class Vec2 {   // for 2D space
