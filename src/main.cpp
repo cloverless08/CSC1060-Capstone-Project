@@ -11,7 +11,6 @@
 #include <array>
 #include <string>
 #include <cmath>
-#include <rand>
 
 #include "main_utils.h"
 #include "structs.h"
@@ -32,11 +31,10 @@ constexpr int STANDARD_RESOLUTION_WIDTH = 640;
 constexpr int STANDARD_RESOLUTION_HEIGHT = 480;
 constexpr int MOVING_RESOLUTION_HEIGHT = 320;
 constexpr int MOVING_RESOLUTION_WIDTH = 240;
-//constexpr unsigned int seedStarField = generateSeed()
 
 const std::array<std::string, 4> msgType = {"SYSTEM", "ERROR", "SETUP", "WARN"}; // strOut() helpful labels
 const std::array<int, 4> BACKGROUND_COLOR = {0, 0, 0, 0};
-
+const unsigned int seedStarField = generateSeed();
 const double G = 6.67 * pow(10, -11); // universal gravitational constant yo
 
 
