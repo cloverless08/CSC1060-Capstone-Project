@@ -41,8 +41,6 @@ const double G = 6.67 * pow(10, -11); // universal gravitational constant yo
 int main() {
 
     TerminalInfoHeader();
-    std::cout << G << std::endl;
-    std::cout << BACKGROUND_COLOR[0] << BACKGROUND_COLOR[1] << BACKGROUND_COLOR[2] << BACKGROUND_COLOR[3] << std::endl;
     SDL_Delay(500);
 
     // variables
@@ -141,7 +139,7 @@ int main() {
         SDL_RenderClear(renderer);
         SDL_RenderCopy(renderer, pixelBufferTexture, nullptr, nullptr);
         SDL_RenderPresent(renderer);
-        SDL_Delay(25);
+        //SDL_Delay(25);
     }
     StrOut("Closing Program Loop...", msgType[0]);
 
