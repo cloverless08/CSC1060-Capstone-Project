@@ -23,12 +23,6 @@ public:
     double mass;
     double radius;
 };
-class Ray {
-public:
-    double x; double y;
-    Vec2 direction;
-
-};
 
 class Camera {
 public:
