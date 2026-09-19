@@ -76,3 +76,7 @@ std::string GetColor(int r,int g, int b,int a) {
 
     }
 }
+
+int generateSeed() {
+
+}

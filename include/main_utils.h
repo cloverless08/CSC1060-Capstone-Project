@@ -16,3 +16,5 @@ void SetPixel(uint32_t* buffer, int width, int height, int x, int y, uint8_t r =
 void TerminalInfoHeader();
 
 void DiagnoseProgram();
+
+int generateSeed();
