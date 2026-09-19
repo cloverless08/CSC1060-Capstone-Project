@@ -27,10 +27,10 @@ void loop2D(std::vector<uint32_t>& buffer, BlackHole& hole, int pixelX, int pixe
     const double xCentered = static_cast<double>((2.0 * pixelX - width) / height);
     const double yCentered = static_cast<double>((2.0 * pixelY - height) / height);
 
-    int pixelR = 255;
-    int pixelG = 255;
-    int pixelB = 255;
-    const int pixelA = 255;
+    int pixelR = backgroundColor[0];
+    int pixelG = backgroundColor[1];
+    int pixelB = backgroundColor[2];
+    const int pixelA = backgroundColor[3];
 
     Vec2 rayDir = {rayDir.x = xCentered, rayDir.y = yCentered};
 
