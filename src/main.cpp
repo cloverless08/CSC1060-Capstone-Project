@@ -38,10 +38,10 @@ const std::array<int, 4> BACKGROUND_COLOR = {0, 0, 0, 0};
 const double G = 6.67 * pow(10, -11); // universal gravitational constant yo
 
 const uint64_t seedStarField =
-    (generateSeed(0, 100) * 1000000000ULL) +
-    (generateSeed(0, 255) * 1000000ULL) +
-    (generateSeed(0, 255) * 1000ULL) +
-    generateSeed(0, 255);
+    (randomUint64(0, 100) * 1000000000ULL) +
+    (randomUint64(0, 255) * 1000000ULL) +
+    (randomUint64(0, 255) * 1000ULL) +
+    randomUint64(0, 255);
 
 
 int main() {

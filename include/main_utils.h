@@ -17,4 +17,6 @@ void TerminalInfoHeader();
 
 void DiagnoseProgram();
 
-uint64_t generateSeed(int min, int max);
+uint64_t randomUint64(int min, int max);
+
+uint64_t generateStarFieldSeed();
