@@ -37,23 +37,17 @@ const std::array<std::string, 4> msgType = {"SYSTEM", "ERROR", "SETUP", "WARN"};
 const std::array<int, 4> BACKGROUND_COLOR = {0, 0, 0, 0};
 const double G = 6.67 * pow(10, -11); // universal gravitational constant yo
 
-const unsigned int seedStarField =
+const uint64_t seedStarField =
     (generateSeed(0, 100) * 1000000000) +
         (generateSeed(0, 255) * 1000000) +
             (generateSeed(0, 255) * 1000) +
                 generateSeed(0, 255);
-const unsigned int seedTest =
-    (82 * 1000000000) +
-        (122 * 1000000) +
-            (203 * 1000) +
-                87;
 
 
 int main() {
 
     TerminalInfoHeader();
     std::cout << seedStarField << std::endl;
-    std::cout << seedTest << std::endl;
     SDL_Delay(500);
 
     // variables
