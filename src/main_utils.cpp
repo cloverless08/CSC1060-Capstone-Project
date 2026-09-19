@@ -77,11 +77,11 @@ std::string GetColor(int r,int g, int b,int a) {
     }
 }
 
-int generateSeed() {
+int generateSeed(int min, int max) {
     std::random_device rndm;
     std::mt19937 gen(rndm());
 
-    std::uniform_int_distribution<int> distrib(1, 255);
+    std::uniform_int_distribution<int> distrib(min, max);
 
     int randomNum = distrib(gen);
 

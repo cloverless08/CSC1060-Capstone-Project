@@ -17,4 +17,4 @@ void TerminalInfoHeader();
 
 void DiagnoseProgram();
 
-int generateSeed();
+int generateSeed(int min, int max);

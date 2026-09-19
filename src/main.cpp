@@ -34,8 +34,13 @@ constexpr int MOVING_RESOLUTION_WIDTH = 240;
 
 const std::array<std::string, 4> msgType = {"SYSTEM", "ERROR", "SETUP", "WARN"}; // strOut() helpful labels
 const std::array<int, 4> BACKGROUND_COLOR = {0, 0, 0, 0};
-const unsigned int seedStarField = generateSeed();
 const double G = 6.67 * pow(10, -11); // universal gravitational constant yo
+
+const unsigned int seedStarField =
+    (generateSeed(0, 100) * 1000000000) +
+        (generateSeed(0, 255) * 1000000) +
+            (generateSeed(0, 255) * 1000) +
+                generateSeed(0, 255);
 
 
 int main() {
