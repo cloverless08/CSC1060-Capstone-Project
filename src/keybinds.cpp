@@ -74,8 +74,6 @@ void GetKeyPress(SDL_Event &event, bool &running, Camera &cam) {
                         StrOut("Down Arrow Released", msgType[0]);
                         break;
                 }
-            } else if (event.type == SDL_MOUSEMOTION) {
-                // mouse handling framework, if needed later but prob not bc what
             }
         }
 }
