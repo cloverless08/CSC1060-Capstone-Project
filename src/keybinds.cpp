@@ -75,7 +75,7 @@ void GetKeyPress(SDL_Event &event, bool &running, Camera &cam) {
                         break;
                 }
             } else if (event.type == SDL_MOUSEMOTION) {
-                // mouse handling framework, if needed later
+                // mouse handling framework, if needed later but prob not bc what
             }
         }
 }
