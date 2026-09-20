@@ -17,7 +17,7 @@
 #define newline "\n"
 
 // function for clean, dynamic console output with labels
-int StrOut(const std::string msg, std::string label) {
+int StrOut(const std::string& msg, std::string label) {
     if (label != "standard") {
         for (char &c : label) {
             c = static_cast<char>(std::toupper(static_cast<unsigned char>(c))); // changes string 'label' to all upper

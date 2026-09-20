@@ -7,7 +7,7 @@
 #include <string>
 
 
-int StrOut(const std::string msg = "Nothing to output (edit strOut() to fix)", std::string label = "standard");
+int StrOut(const std::string& msg = "Nothing to output (edit strOut() to fix)", std::string label = "standard");
 
 int RandInt(int rangeMin, int rangeMax);
 
