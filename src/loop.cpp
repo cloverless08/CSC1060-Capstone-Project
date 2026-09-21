@@ -59,17 +59,23 @@ void loop3D(std::vector<uint32_t>& buffer,
     const int height, const int width,
     std::array<int, 4> backgroundColor) {
 
+    /*
     // normalize pixels into UV coordinates 0 through 1
     const double xPixelCentered = static_cast<double>((2.0 * xPixel - width) / height);
     const double yPixelCentered = static_cast<double>((2.0 * yPixel - height) / height);
+    */
+
+    // normalize pixels into UV coordinates 0 sthrough 1
+    const double u = static_cast<double>(xPixel) / height;
+    const double v = static_cast<double>(yPixel) / width;
 
     int pixelR = backgroundColor[0];
     int pixelG = backgroundColor[1];
     int pixelB = backgroundColor[2];
     const int pixelA = backgroundColor[3];
 
-    pixelR += xPixel;
-    pixelG += yPixel;
+    pixelR += (xPixel * 0.5 + 0.5) * 255;
+    pixelG += (yPixel * 0.5 + 0.5) * 255;
     pixelB += RandInt(0, 255);
 
     Vec3 ray;
