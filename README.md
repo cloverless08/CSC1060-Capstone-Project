@@ -32,7 +32,7 @@ cd CSC1060-Capstone-Project
 rm -rf ./build/
 cmake -S . -B build
 cd ./build && make && cd ..
-cp ./build/CSC1060_CAPTSTONE_PROJECT .
+cp ./build/CSC1060_CAPSTONE_PROJECT .
 ~~~
 
 ***OR***
