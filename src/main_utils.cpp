@@ -64,9 +64,6 @@ void TerminalInfoHeader() {
     std::cout << newline;
 }
 
-void DiagnoseProgram() {
-}
-
 uint64_t randomUint64(int min, int max) {
     static std::random_device rndm;
     static std::mt19937 gen(rndm());
