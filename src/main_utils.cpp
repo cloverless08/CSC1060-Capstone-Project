@@ -65,16 +65,6 @@ void TerminalInfoHeader() {
 }
 
 void DiagnoseProgram() {
-
-}
-
-std::string GetColor(int r,int g, int b,int a) {
-    if (!r || !g || !b || !a) {
-        return "bro thats not a color";
-    } else {
-        // color value provided, this isnt important rn what im i doing i need to focus
-
-    }
 }
 
 uint64_t randomUint64(int min, int max) {
@@ -84,8 +74,4 @@ uint64_t randomUint64(int min, int max) {
     std::uniform_int_distribution<int> distrib(min, max);
 
     return distrib(gen);
-}
-
-uint64_t generateStarFieldSeed() {
-
 }
