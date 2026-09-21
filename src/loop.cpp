@@ -68,10 +68,7 @@ void loop3D(std::vector<uint32_t>& buffer,
     int pixelB = backgroundColor[2];
     const int pixelA = backgroundColor[3];
 
-    // initialized 3 dimensional world coordinates
-    int worldX;
-    int worldY;
-    int worldZ;
+
 
     Vec3 ray;
 
