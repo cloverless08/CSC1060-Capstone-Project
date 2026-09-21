@@ -22,6 +22,18 @@ To install and run, simply download or clone this repository, navigate to ./buil
 - **Windows**
 - to come ig
 
+You can use the following commands to simplify the install if you are on linux:
+
+(Ensure that you have git and base-devel intalled, as well as cmake and a cpp compiler)
+
+~~~bash
+git clone https://github.com/cloverless08/CSC1060-Capstone-Project.git
+cd CSC1060-Capstone-Project
+rm -rf ./build/
+cmake -S . -B build
+cd ./build && make && cd ..
+~~~
+
 ***OR***
 
 Download the cross-platform executable here (without source code):
@@ -40,8 +52,28 @@ Carrick De Min:
 - Github [@cloverless08](https://www.github.com/cloverless08)
 - Instagram [@carrick.ature](https://www.instagram.com/carrick.ature)
 
+## AI Use Disclaimer
+As is standard convention in of my projects and to uphold my education and academic honesty, 
+no generative AI tools (such as ChatGPT or Claude Code) was used to write or create ANY lines of code
+or ANY part of this project.
+
+These AI tools played a minor role in compiling research resources and articles, and was used to explain
+certain C++ topics as a personal tutor while I'm learning.
+
+AI use in this project aligns with the FRCC Code of Conduct and the requirements outlined
+in the CSC1060 syllabus.
+
 
 ## License
+
+~~~ Synopsis
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+~~~
 
 [MIT](https://choosealicense.com/licenses/mit/)
 
