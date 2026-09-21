@@ -50,8 +50,7 @@ void GetKeyPress(SDL_Event &event, bool &running, Camera &cam) {
                         break;
                     case SDLK_d:
                         StrOut("D: Diagnostics", msgType[0]);
-                        std::thread diagnosticThread(DiagnoseProgram);
-                        diagnosticThread.join();
+                        DiagnoseProgram();
                         break;
                 }
             } else if (event.type == SDL_KEYUP) {
