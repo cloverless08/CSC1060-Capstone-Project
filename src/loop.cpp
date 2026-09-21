@@ -64,21 +64,15 @@ void loop3D(std::vector<uint32_t>& buffer,
     const double xPixelCentered = static_cast<double>((2.0 * xPixel - width) / height);
     const double yPixelCentered = static_cast<double>((2.0 * yPixel - height) / height);
 
-    /*
     int pixelR = backgroundColor[0];
     int pixelG = backgroundColor[1];
     int pixelB = backgroundColor[2];
     const int pixelA = backgroundColor[3];
-    */
-
-
-    int pixelR = RandInt(0,255);
-    int pixelG = RandInt(0,255);
-    int pixelB = RandInt(0,255);
 
     pixelR = xPixel * 0.3984375;
     pixelG = yPixel * 0.3984375;
-    pixelB += RandInt(0, 255);
+    //pixelB += RandInt(0, 255);
+    pixelB = xPixel / (yPixel + 0.00001);
 
     Vec3 ray;
 
