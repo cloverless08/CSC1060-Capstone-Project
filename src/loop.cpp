@@ -74,8 +74,8 @@ void loop3D(std::vector<uint32_t>& buffer,
     int pixelB = backgroundColor[2];
     const int pixelA = backgroundColor[3];
 
-    pixelR = (pixelR + xPixel);
-    pixelG += (pixelG + yPixel);
+    pixelR += xPixel * u;
+    pixelG += yPixel * v;
     pixelB += RandInt(0, 255);
 
     Vec3 ray;
