@@ -2,9 +2,10 @@
 // Created by cdemin on 9/10/26.
 //
 
-#include <cstdint>
 
-#include <iostream>
+#pragma once
+
+#include <array>
 #include <vector>
 #include "structs.h"
 
