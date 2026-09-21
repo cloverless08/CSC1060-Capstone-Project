@@ -30,7 +30,7 @@ void GetKeyPress(SDL_Event &event, bool &running, Camera &cam) {
                         break;
                     case SDLK_RIGHT:
                         StrOut("Right Arrow Pressed", msgType[0]);
-                        cam.yaw = ((cam.yaw + 10) % 361);
+                        cam.yaw = ((    cam.yaw + 10) % 361);
                         break;
                     case SDLK_LEFT:
                         StrOut("Left Arrow Pressed", msgType[0]);
