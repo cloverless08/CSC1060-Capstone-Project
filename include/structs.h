@@ -20,13 +20,13 @@ public:
 class BlackHole {
 public:
     Vec3 position = {0.0,0.0,0.0};
-    double mass;
-    double radius;
+    double mass = 100;
+    double radius = 0.25;
 };
 
 class Camera {
 public:
-    int pitch;
-    int yaw;
-    int distance;
+    int pitch = 0;
+    int yaw = 0;
+    int distance = 0;
 };
