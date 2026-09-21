@@ -113,7 +113,7 @@ int main() {
     StrOut("Pixel Buffer Initialized.", msgType[2]);
 
 
-    BlackHole hole = {0.0, 0.0, 100, 0.25};
+    BlackHole hole = {0.0, 0.0, 0.0, 100, 0.25};
     Camera cam = {0, 0};
 
 
