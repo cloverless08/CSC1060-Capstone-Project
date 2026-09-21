@@ -27,10 +27,16 @@ void loop2D(std::vector<uint32_t>& buffer, BlackHole& hole, int pixelX, int pixe
     const double xCentered = static_cast<double>((2.0 * pixelX - width) / height);
     const double yCentered = static_cast<double>((2.0 * pixelY - height) / height);
 
+    /*
     int pixelR = backgroundColor[0];
     int pixelG = backgroundColor[1];
     int pixelB = backgroundColor[2];
+    */
     const int pixelA = backgroundColor[3];
+
+    int pixelR = RandInt(0,255);
+    int pixelG = RandInt(0,255);
+    int pixelB = RandInt(0,255);
 
     Vec2 rayDir = {rayDir.x = xCentered, rayDir.y = yCentered};
 
@@ -70,8 +76,8 @@ void loop3D(std::vector<uint32_t>& buffer,
     int pixelB = backgroundColor[2];
     const int pixelA = backgroundColor[3];
 
-    pixelR += xPixel;
-    pixelG += yPixel;
+    pixelR = xPixel * 0.3984375;
+    pixelG = yPixel * 0.3984375;
     pixelB += RandInt(0, 255);
 
     Vec3 ray;
