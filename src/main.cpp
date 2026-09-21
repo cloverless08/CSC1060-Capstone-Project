@@ -58,7 +58,7 @@ int main() {
     // intial warnings and output
     StrOut("CSC1060 - Capstone Project", "info");
     StrOut("By Carrick De Min, Fall 2026", "info");
-    StrOut("This program is under development and may not function as expected.", msgType[3]);
+    StrOut("This program is under development and may not function as expected.", "warn");
 
 
     // initialize sdl2
