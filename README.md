@@ -28,6 +28,12 @@ Download the cross-platform executable here (without source code):
  - [Google Drive](link TK)
  - [Dropbox](link TK)
 
+## Controls/Keybinds
+- Arrow Keys: Conrol camera pitch and yaw
+- D: Print diagnostic info to terminal/screen
+- S: Save snapshot of current frame
+- P: Pause simulation
+
 ## Authors
 
 Carrick De Min:
