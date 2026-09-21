@@ -78,8 +78,8 @@ std::string GetColor(int r,int g, int b,int a) {
 }
 
 uint64_t randomUint64(int min, int max) {
-    std::random_device rndm;
-    std::mt19937 gen(rndm());
+    static std::random_device rndm;
+    static std::mt19937 gen(rndm());
 
     std::uniform_int_distribution<int> distrib(min, max);
 
