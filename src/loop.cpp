@@ -71,7 +71,7 @@ void loop3D(std::vector<uint32_t>& buffer,
 
     pixelR = xPixel * 0.3984375;
     pixelG = yPixel * 0.3984375;
-    pixelB += RandInt(0, 255);
+    pixelB = (xPixel + yPixel) / 2;
 
     Vec3 ray;
 
