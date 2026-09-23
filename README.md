@@ -9,8 +9,6 @@ CPU traced representation of light rays passing through a black hole in space.
  - Each pixel gets an RBG value in a pixel buffer
  - SDL2 renders pixel buffer to screen using GPU
 
-bro clion is goated
-
 ## Run/Install (Linux or Windows)
 
 This project has cross-platform compatible makefiles for Linux and Windows x86.
