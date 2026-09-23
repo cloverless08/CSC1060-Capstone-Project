@@ -22,7 +22,7 @@ To install and run, simply download or clone this repository, navigate to ./buil
 - **Windows**
 - to come ig
 
-You can use the following commands to simplify the install if you are on linux:
+You can use the following commands to simplify the install if you are on linux to install the latest git push from main:
 
 (Ensure that you have git and base-devel intalled, as well as cmake and a cpp compiler)
 
