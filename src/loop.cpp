@@ -68,13 +68,16 @@ void loop3D(std::vector<uint32_t>& buffer,
     int pixelB = backgroundColor[2];
     const int pixelA = backgroundColor[3];
 
-    Vec3 ray;
-    ray.data[0] = xPixelCentered;
-    ray.data[1] = yPixelCentered;
+    pixelR = xPixel * 0.3984375;
+    pixelG = yPixel * 0.3984375;
+    pixelB = (xPixel + yPixel) / 2;
+
+    std::cout << pixelR << pixelG, pixelB;
+    std::cout << "\n";
 
     SetPixel(buffer.data(), width, height,
     xPixel, yPixel, pixelR, pixelG, pixelB,
-    255);
+    pixelA);
 }
 
 void test_loop(std::vector<uint32_t>& buffer, int pixelX, int pixelY, const int height, const int width) { // old loop that draws a gradient as i was learning

@@ -12,7 +12,7 @@ target_sources(CSC1060_CAPSTONE_PROJECT PRIVATE
 "${CMAKE_CURRENT_SOURCE_DIR}/src/keybinds.cpp"
 )
 
-target_include_directories(CSC1060_CAPStONE_PROJECT PRIVATE
+target_include_directories(CSC1060_CAPSTONE_PROJECT PRIVATE
 "${CMAKE_CURRENT_SOURCE_DIR}/include/"
 )
 
