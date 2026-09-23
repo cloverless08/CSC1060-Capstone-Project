@@ -9,6 +9,7 @@ public:
     std::array<double, 3> position;
 
     Vec3() : position{0.0,0.0,0.0} {};
+    Vec3 vectorl;
 };
 
 class Vec2 {   // for 2D space
