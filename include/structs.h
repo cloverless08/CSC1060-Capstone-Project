@@ -28,9 +28,9 @@ public:
 
 
     // operator functions
-    Vec3 operator-() const {
-        return Vec3{-position[0], -position[1], -position[2]};
-    }
+    Vec3 operator-() const { return Vec3(-e[0], -e[1], -e[2]); }
+    double operator[](int i) const { return e[i]; }
+    double& operator[](int i) { return e[i]; }
 
 
 };
