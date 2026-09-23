@@ -6,9 +6,9 @@
 
 class Vec3 {       // for 3d space
 public:
-    double x = 0.0;
-    double y = 0.0;
-    double z = 0.0;
+    std::array<double, 3> position;
+
+    Vec3() : position{0.0,0.0,0.0} {};
 };
 
 class Vec2 {   // for 2D space
