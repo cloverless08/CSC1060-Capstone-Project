@@ -64,9 +64,7 @@ void loop3D(std::vector<uint32_t>& buffer,
     const double xPixelCentered = static_cast<double>((2.0 * xPixel - width) / height);
     const double yPixelCentered = static_cast<double>((2.0 * yPixel - height) / height);
 
-    int pixelR = backgroundColor[0];
-    int pixelG = backgroundColor[1];
-    int pixelB = backgroundColor[2];
+    Vec3 pixelRGB = {static_cast<double>(backgroundColor[0]), static_cast<double>(backgroundColor[1]), static_cast<double>(backgroundColor[2])};
     const int pixelA = backgroundColor[3];
 
     // raytracing loop
