@@ -4,13 +4,16 @@
 
 #pragma once
 
-class Vec3 {       // for 3d space
+class Vec3 {    // for 3d space
 public:
     std::array<double, 3> position;
 
+    // constructors for empty and 3 arg calls
     Vec3() : position{0.0,0.0,0.0} {};
     Vec3(double position0, double position1, double position2) : position{position0,position1,position2} {};
 
+
+    // getter functions
     [[nodiscard]] double x() const {
         return position[0];
     }
@@ -22,6 +25,8 @@ public:
     [[nodiscard]] double z() const {
         return position[2];
     }
+
+
 
 };
 
