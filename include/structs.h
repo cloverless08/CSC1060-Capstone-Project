@@ -6,33 +6,33 @@
 
 class Vec3 {    // for 3d space
 public:
-    std::array<double, 3> position;
+    std::array<double, 3> e;
 
     // constructors for empty and 3 arg calls
-    Vec3() : position{0.0,0.0,0.0} {};
-    Vec3(double position0, double position1, double position2) : position{position0,position1,position2} {};
+    Vec3() : e{0.0,0.0,0.0} {};
+    Vec3(double position0, double position1, double position2) : e{position0,position1,position2} {};
 
 
     // getter functions
      double x() const {
-        return position[0];
+        return e[0];
     }
 
     double y() const {
-        return position[1];
+        return e[1];
     }
 
     double z() const {
-        return position[2];
+        return e[2];
     }
 
 
     // operator functions
     Vec3 operator-() const {
-        return Vec3{-position[0], -position[1], -position[2]};
+        return Vec3{-e[0], -e[1], -e[2]};
     }
-    double operator[](int i) const {return position[i];}
-    double& operator[](int i) {return position[i];}
+    double operator[](int i) const {return e[i];}
+    double& operator[](int i) {return e[i];}
 
 };
 
