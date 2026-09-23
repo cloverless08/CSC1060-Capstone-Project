@@ -81,7 +81,7 @@ furnished to do so, subject to the following conditions:
 
 ## Screenshots
 
-TK
+![Early test window](assets/Screenshot_20260923_010026.png)
 
 
 
