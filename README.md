@@ -54,15 +54,19 @@ Carrick De Min:
 - Instagram [@carrick.ature](https://www.instagram.com/carrick.ature)
 
 ## AI Use Disclaimer
-As is standard convention in of my projects and to uphold my education and academic honesty, 
-no generative AI tools (such as ChatGPT or Claude Code) was used to write or create ANY lines of code
-or ANY part of this project.
+As is standard convention in my projects, and to uphold my education
+and academic honesty, no generative AI tools (such as ChatGPT or Claude Code)
+were used to write, generate, or create any code or other submitted project content.
 
-These AI tools played a minor role in compiling research resources and articles, and was used to explain
-certain C++ topics as a personal tutor while I'm learning.
+Generative AI tools played a minor role in compiling research resources
+and articles and were used as personal tutoring resources to explain certain
+C++ and programming concepts while I was learning them. 
+Any resulting knowledge was independently applied and implemented by me.
 
-AI use in this project aligns with the FRCC Code of Conduct and the requirements outlined
-in the CSC1060 syllabus.
+AI use in this project aligns with the 
+FRCC Code of Conduct and the requirements outlined in the CSC1060 syllabus.
+
+Please refer to the tags in the **Sources** section of this readme for more specifics.
 
 
 ## License
