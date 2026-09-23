@@ -30,8 +30,8 @@ public:
     // operator functions
     Vec3 operator-() const {
         return Vec3{-position[0], -position[1], -position[2]};
-        }
     }
+
 
 };
 
