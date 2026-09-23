@@ -2,12 +2,14 @@
 
 # CSC1060 Capstone - Black Hole Sim
 
-A (hopefully) real-time visual simulation of a Black Hole, including Doppler Effect, Gravitational Lensing, Accretion Disk, and Halo.
+A (not quite) real-time visual simulation of a Black Hole, including Doppler Effect, Gravitational Lensing, Accretion Disk, and Halo.
 
 CPU traced representation of light rays passing through a black hole in space.
  - C++ Calculates light rays, star position and black hole effects
  - Each pixel gets an RBG value in a pixel buffer
  - SDL2 renders pixel buffer to screen using GPU
+
+bro clion is goated
 
 ## Run/Install (Linux or Windows)
 
