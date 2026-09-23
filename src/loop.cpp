@@ -69,8 +69,8 @@ void loop3D(std::vector<uint32_t>& buffer,
     const int pixelA = backgroundColor[3];
 
     Vec3 ray;
-    ray.x = xPixelCentered;
-    ray.y = yPixelCentered;
+    ray.e[0] = xPixelCentered;
+    ray.e[1] = yPixelCentered;
 
     SetPixel(buffer.data(), width, height,
     xPixel, yPixel, pixelR, pixelG, pixelB,
