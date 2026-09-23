@@ -26,11 +26,11 @@ void loop2D(std::vector<uint32_t>& buffer, BlackHole& hole, int pixelX, int pixe
     // normalize pixels into UV coordinates 0 through 1
     const double xCentered = static_cast<double>((2.0 * pixelX - width) / height);
     const double yCentered = static_cast<double>((2.0 * pixelY - height) / height);
+    const int pixelA = backgroundColor[3];
 
     int pixelR = backgroundColor[0];
     int pixelG = backgroundColor[1];
     int pixelB = backgroundColor[2];
-    const int pixelA = backgroundColor[3];
 
     Vec2 rayDir = {rayDir.x = xCentered, rayDir.y = yCentered};
 
