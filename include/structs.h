@@ -11,15 +11,15 @@ public:
     Vec3() : position{0.0,0.0,0.0} {};
     Vec3(double position0, double position1, double position2) : position{position0,position1,position2} {};
 
-    double x() const {
+    [[nodiscard]] double x() const {
         return position[0];
     }
 
-    double y() const {
+    [[nodiscard]] double y() const {
         return position[1];
     }
 
-    double z() const {
+    [[nodiscard]] double z() const {
         return position[2];
     }
 
