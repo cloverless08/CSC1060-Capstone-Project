@@ -27,7 +27,7 @@ You can use the following commands to simplify the install if you are on linux t
 (Ensure that you have git and base-devel intalled, as well as cmake and a cpp compiler)
 
 ~~~bash
-git clone https://github.com/cloverless08/CSC1060-Capstone-Project.git
+git clone https://github.com/cloverless08/black-hole-simulation.git
 cd CSC1060-Capstone-Project
 rm -rf ./build/
 cmake -S . -B build
