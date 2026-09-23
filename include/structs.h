@@ -34,6 +34,8 @@ public:
     double operator[](int i) const {return position[i];}
     double& operator[](int i) {return position[i];}
 
+    
+
 
 };
 
