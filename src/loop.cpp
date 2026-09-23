@@ -59,7 +59,6 @@ void loop3D(std::vector<uint32_t>& buffer,
     const int height, const int width,
     std::array<int, 4> backgroundColor) {
 
-
     // normalize pixels into UV coordinates 0 through 1
     const double xPixelCentered = static_cast<double>((2.0 * xPixel - width) / height);
     const double yPixelCentered = static_cast<double>((2.0 * yPixel - height) / height);
@@ -69,10 +68,9 @@ void loop3D(std::vector<uint32_t>& buffer,
     int pixelB = backgroundColor[2];
     const int pixelA = backgroundColor[3];
 
-    // raytracing loop
-
-
     Vec3 ray;
+    ray.x = xPixelCentered;
+    ray.y = yPixelCentered;
 
     SetPixel(buffer.data(), width, height,
     xPixel, yPixel, pixelR, pixelG, pixelB,

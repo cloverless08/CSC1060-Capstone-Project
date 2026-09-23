@@ -14,15 +14,15 @@ public:
 
 
     // getter functions
-    [[nodiscard]] double x() const {
+     double x() const {
         return position[0];
     }
 
-    [[nodiscard]] double y() const {
+    double y() const {
         return position[1];
     }
 
-    [[nodiscard]] double z() const {
+    double z() const {
         return position[2];
     }
 
@@ -33,10 +33,6 @@ public:
     }
     double operator[](int i) const {return position[i];}
     double& operator[](int i) {return position[i];}
-
-
-    // this is a shitty ass program i need to quit
-
 
 };
 
