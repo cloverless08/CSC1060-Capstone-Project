@@ -55,10 +55,10 @@ Carrick De Min:
 
 ## AI Use Disclaimer
 As is standard convention in my projects, and to uphold my education
-and academic honesty, no generative AI tools (such as ChatGPT or Claude Code)
-were used to write, generate, or create any code or other submitted project content.
+and academic honesty, *no generative AI tools (such as ChatGPT or Claude Code)
+were used to write, generate, or create any code or other submitted project content.*
 
-Generative AI tools played a minor role in compiling research resources
+AI tools played a minor role in compiling research resources
 and articles and were used as personal tutoring resources to explain certain
 C++ and programming concepts while I was learning them. 
 Any resulting knowledge was independently applied and implemented by me.
