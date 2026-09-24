@@ -59,9 +59,9 @@ and academic honesty, *no generative AI tools (such as ChatGPT or Claude Code)
 were used to write, generate, or create any code or other submitted project content.*
 
 AI tools played a minor role in compiling research resources
-and articles and were used as personal tutoring resources to explain certain
+and articles and were occasionally used as personal tutor to explain certain
 C++ and programming concepts while I was learning them. 
-Any resulting knowledge was independently applied and implemented by me.
+Any resulting knowledge was independently applied and implemented by me once it was understood.
 
 AI use in this project aligns with the 
 FRCC Code of Conduct and the requirements outlined in the CSC1060 syllabus.
