@@ -68,12 +68,11 @@ void loop3D(std::vector<uint32_t>& buffer,
     int pixelB = backgroundColor[2];
     const int pixelA = backgroundColor[3];
 
+    /*
     pixelR = xPixel * 0.3984375;
     pixelG = yPixel * 0.3984375;
     pixelB = (xPixel + yPixel) / 2;
-
-    std::cout << pixelR << pixelG, pixelB;
-    std::cout << "\n";
+    */
 
     SetPixel(buffer.data(), width, height,
     xPixel, yPixel, pixelR, pixelG, pixelB,
