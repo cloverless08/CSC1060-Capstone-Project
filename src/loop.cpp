@@ -2,7 +2,6 @@
 // Created by cdemin on 9/10/26.
 //
 
-#include <SDL2/SDL.h>
 #include <vector>
 #include <iostream>
 #include <cmath>
@@ -80,7 +79,7 @@ void loop3D(std::vector<uint32_t>& buffer,
 }
 
 void test_loop(std::vector<uint32_t>& buffer, int pixelX, int pixelY, const int height, const int width) { // old loop that draws a gradient as i was learning
-    // normalize pixels into UV coordinates 0 sthrough 1
+    // normalize pixels into UV coordinates 0 through 1
     const double u = static_cast<double>(pixelX) / height;
     const double v = static_cast<double>(pixelY) / width;
 
