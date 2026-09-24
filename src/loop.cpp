@@ -32,9 +32,9 @@ void loop2D(std::vector<uint32_t>& buffer, BlackHole& hole, int pixelX, int pixe
     int pixelG = backgroundColor[1];
     int pixelB = backgroundColor[2];
 
-    Vec2 rayDir = {rayDir.x = xCentered, rayDir.y = yCentered};
+    Vec2 rayDir = {xCentered, yCentered};
 
-    double length = std::sqrt(rayDir.x * rayDir.x + rayDir.y * rayDir.y);
+    double length = std::sqrt(rayDir.x() * rayDir.x() + rayDir.y() * rayDir.y());
 
     if (length <= hole.radius) {
         // pixel is withing black hole radius
@@ -84,16 +84,16 @@ void test_loop(std::vector<uint32_t>& buffer, int pixelX, int pixelY, const int 
     const double u = static_cast<double>(pixelX) / height;
     const double v = static_cast<double>(pixelY) / width;
 
-    Vec2 rayDir = {.x = u, .y = v};
+    Vec2 rayDir = {u, v};
 
-    if (double length = std::sqrt(rayDir.x * rayDir.x + rayDir.y * rayDir.y); length > 0.0001) { // avoids NaN or division by zero at the centerpoint
-        rayDir.x /= length;
-        rayDir.y /= length;
+    if (double length = std::sqrt(rayDir.x() * rayDir.x() + rayDir.y() * rayDir.y()); length > 0.0001) { // avoids NaN or division by zero at the centerpoint
+        rayDir[0] /= length;
+        rayDir[1] /= length;
     }
 
     // convert back to rgba
-    int pixelR = static_cast<int>((rayDir.x * 0.5 + 0.5) * 255);
-    int pixelG = static_cast<int>((rayDir.y * 0.5 + 0.5) * 255);
+    int pixelR = static_cast<int>((rayDir.x() * 0.5 + 0.5) * 255);
+    int pixelG = static_cast<int>((rayDir.y() * 0.5 + 0.5) * 255);
     //int pixelB = i;
     int pixelB = 255;
 
