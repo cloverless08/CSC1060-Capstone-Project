@@ -38,8 +38,25 @@ public:
 
 class Vec2 {   // for 2D space
 public:
-    double x = 0.0;
-    double y = 0.0;
+    std::array<double, 2> data;
+
+    Vec2() : data{0.0,0.0} {};
+    Vec2(double x, double y) : data{x,y} {};
+
+    double x() const {
+        return data[0];
+    }
+
+    double y() const {
+        return data[1];
+    }
+
+    Vec2 operator-() const {
+        return Vec2{-data[0], -data[1]};
+    }
+
+    double operator[](int i) const {return data[i];}
+    double& operator[](int i) {return data[i];}
 };
 
 class BlackHole {
