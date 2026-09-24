@@ -33,8 +33,8 @@ constexpr int STANDARD_RESOLUTION_HEIGHT = 480;
 constexpr int MOVING_RESOLUTION_HEIGHT = 320;
 constexpr int MOVING_RESOLUTION_WIDTH = 240;
 
-const std::array<std::string, 4> msgType = {"SYSTEM", "ERROR", "SETUP", "WARN"}; // strOut() helpful labels
-const std::array<int, 4> BACKGROUND_COLOR = {0, 0, 0, 0};
+constexpr std::array<std::string, 4> msgType = {"SYSTEM", "ERROR", "SETUP", "WARN"}; // strOut() helpful labels
+constexpr std::array<int, 4> BACKGROUND_COLOR = {0, 0, 0, 0};
 
 const uint64_t seedStarField = // desire to pack a seed with the following parsed values to be inferred // ts lowkey ass idk waht im gonna do with this yet
     (randomUint64(0, 100) * 1000000000ULL) +
@@ -49,7 +49,7 @@ int main() {
     std::cout << seedStarField << std::endl;
     SDL_Delay(500);
 
-    // variables
+    // local variables
     bool running = true;
 
     StrOut("Local Variables Initialized.", msgType[2]);
@@ -111,7 +111,7 @@ int main() {
     std::vector<uint32_t> pixelBuffer(STANDARD_RESOLUTION_WIDTH * STANDARD_RESOLUTION_HEIGHT, 0);
     StrOut("Pixel Buffer Initialized.", msgType[2]);
 
-
+    // initalize custom structs
     BlackHole hole;
     Camera cam;
 
