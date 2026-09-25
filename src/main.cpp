@@ -36,17 +36,10 @@ constexpr int MOVING_RESOLUTION_WIDTH = 240;
 const std::array<std::string, 4> msgType = {"SYSTEM", "ERROR", "SETUP", "WARN"}; // strOut() helpful labels
 constexpr std::array<int, 4> BACKGROUND_COLOR = {0, 0, 0, 0};
 
-const uint64_t seedStarField = // desire to pack a seed with the following parsed values to be inferred // ts lowkey ass idk waht im gonna do with this yet
-    (randomUint64(0, 100) * 1000000000ULL) +
-    (randomUint64(0, 255) * 1000000ULL) +
-    (randomUint64(0, 255) * 1000ULL) +
-    randomUint64(0, 255);
-
 
 int main() {
 
     TerminalInfoHeader();
-    std::cout << seedStarField << std::endl;
     SDL_Delay(500);
 
     // local variables
