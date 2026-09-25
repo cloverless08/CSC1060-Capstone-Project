@@ -58,6 +58,8 @@ void loop3D(std::vector<uint32_t>& buffer,
     const int height, const int width,
     std::array<int, 4> backgroundColor) {
 
+    unsigned long long time = 0;
+
     // normalize pixels into UV coordinates 0 through 1
     const double xPixelCentered = static_cast<double>((2.0 * xPixel - width) / height);
     const double yPixelCentered = static_cast<double>((2.0 * yPixel - height) / height);
@@ -66,6 +68,9 @@ void loop3D(std::vector<uint32_t>& buffer,
     int pixelG = backgroundColor[1];
     int pixelB = backgroundColor[2];
     const int pixelA = backgroundColor[3];
+
+    Vec3 rayOrigin; // needs to be set to camera coordinates when called
+    Vec3 rayDir;
 
     /*
     pixelR = xPixel * 0.3984375;
